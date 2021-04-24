@@ -1,0 +1,33 @@
+.hasDetail {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 115%;
+        left: 0;
+        right: 0;
+        width: 40px;
+        margin: 0 auto;
+        height: 6px;
+        background-color: #fff;
+    }
+}
+
+.nav__menu {
+    li {
+        position: relative;
+
+        &:hover {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 120%;
+                left: 0;
+                right: 0;
+                width: 40px;
+                margin: 0 auto;
+                height: 2px;
+                background-color: #fff;
+            }
+        }
+    }
+}
