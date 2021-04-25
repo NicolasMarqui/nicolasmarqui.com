@@ -15,7 +15,7 @@ const Hero: React.FC = ({}) => {
     };
 
     return (
-        <div className="py-64 md:py-0 md:h-screen flex justify-center items-center">
+        <div className="py-48 md:py-0 md:h-screen flex justify-center items-center relative">
             <Container>
                 <h3 className="font-zilla text-3xl md:text-7xl">
                     Hello my name is
