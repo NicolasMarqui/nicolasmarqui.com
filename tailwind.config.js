@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             colors: {
                 primaryRed: "#F94144",
+                primaryRedHover: "rgba(249, 65, 68, 0.38)",
                 react: "#6461EA",
                 nextJS: "#5A5A5A",
                 graphql: "#C710A9",
