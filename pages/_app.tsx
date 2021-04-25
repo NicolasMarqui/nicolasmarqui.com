@@ -7,7 +7,6 @@ import Cursor from "@components/Cursor";
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <>
-            <Cursor />
             <Component {...pageProps} />
         </>
     );

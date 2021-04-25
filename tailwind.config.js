@@ -13,6 +13,7 @@ module.exports = {
                 nodeJS: "#46A360",
                 lightWhite: "rgba(255, 255, 255, 0.3)",
                 lighterWhite: "rgba(255, 255, 255, 0.05)",
+                overlay: "rgba(0, 0, 0, 0.65)",
             },
             borderColor: (theme) => ({
                 lightBlack: "#2D2D2D",

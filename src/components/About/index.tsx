@@ -11,11 +11,13 @@ const About: React.FC = ({}) => {
                 </pre>
                 <h2 className="my-7 font-bold font-zilla text-4xl md:text-6xl md:w-5/6">
                     I’m a full-stack developer who loves
-                    <span className="mx-2 text-react">React</span> ,
-                    <span className="mx-2 text-nextJS">Next</span> ,
-                    <span className="mx-2 text-graphql">Graphql</span>,
-                    <span className="mx-2 text-reactNative">React Native</span>,
-                    <span className="mx-2 text-nodeJS">NodeJS</span> and many
+                    <span className="sm:mx-1 text-react"> React, </span>
+                    <span className="sm:mx-1 text-nextJS">Next, </span>
+                    <span className="sm:mx-1 text-graphql">Graphql, </span>
+                    <span className="sm:mx-1 text-reactNative">
+                        React Native,
+                    </span>
+                    <span className="sm:mx-1 text-nodeJS">NodeJS</span> and many
                     others!
                 </h2>
                 <pre>

@@ -32,28 +32,72 @@
     }
 }
 
-.cursor {
-    @media (min-width: 992px) {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: #f94144;
-        mix-blend-mode: difference;
-        z-index: 999;
-        pointer-events: none;
+.card {
+    display: flex;
+    flex-direction: column;
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border-radius: 50%;
-            background-color: #f94144;
-        }
+    @media (min-width: 992px) {
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 18px 18px;
+        grid-template-areas:
+            "one one two"
+            "three four four"
+            "five six seven";
     }
 }
+
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.five {
+    grid-area: five;
+}
+.six {
+    grid-area: six;
+}
+.seven {
+    grid-area: seven;
+}
+.one {
+    grid-area: one;
+}
+.four {
+    grid-area: four;
+}
+
+.card__item {
+    // height: 430px;
+    height: 100%;
+}
+
+// .cursor {
+//     @media (min-width: 992px) {
+//         position: fixed;
+//         left: 0;
+//         top: 0;
+//         width: 60px;
+//         height: 60px;
+//         border-radius: 50%;
+//         background-color: #f94144;
+//         mix-blend-mode: difference;
+//         z-index: 999;
+//         pointer-events: none;
+
+//         &::before {
+//             content: "";
+//             position: absolute;
+//             top: 10px;
+//             left: 10px;
+//             right: 10px;
+//             bottom: 10px;
+//             border-radius: 50%;
+//             background-color: #f94144;
+//         }
+//     }
+// }

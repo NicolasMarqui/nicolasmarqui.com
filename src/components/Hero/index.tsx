@@ -20,7 +20,7 @@ const Hero: React.FC = ({}) => {
                 <h3 className="font-zilla text-3xl md:text-7xl">
                     Hello my name is
                 </h3>
-                <h2 className="text-5xl md:text-9xl font-zilla font-bold md:-mt-2">
+                <h2 className="text-5xl sm:text-6xl md:text-9xl font-zilla font-bold md:-mt-2">
                     Nicolas Marqui
                 </h2>
 

@@ -40,7 +40,7 @@ const Menu: React.FC = ({}) => {
                     </motion.li>
                 </ul>
 
-                <div className="flex-none md:hidden">
+                <div className="flex-none sm:hidden">
                     <Hamburger
                         toggled={isOpenMobile}
                         toggle={() => setIsOpenMobile(!isOpenMobile)}

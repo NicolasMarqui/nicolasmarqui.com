@@ -3,7 +3,7 @@ import Menu from "@components/Menu";
 
 const Nav: React.FC = ({}) => {
     return (
-        <header className="absolute top-10 left-0 right-0">
+        <header className="absolute top-10 left-0 right-0 z-20">
             <Container>
                 <div className="w-full flex items-center justify-between">
                     <div className="flex-none">
