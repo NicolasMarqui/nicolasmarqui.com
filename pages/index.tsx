@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     return (
         <div className="relative">
             <Meta
-                title="Welcome"
+                title="Web developer"
                 description="Hello my name is Nicolas Marqui and i’m a full-stack developer focused on frontend who also loves to have a little back-end adventure"
                 keywords="coding, full-stack, front-end, back-end, react, developer, portfolio"
             />

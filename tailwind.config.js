@@ -14,6 +14,7 @@ module.exports = {
                 lightWhite: "rgba(255, 255, 255, 0.3)",
                 lighterWhite: "rgba(255, 255, 255, 0.05)",
                 overlay: "rgba(0, 0, 0, 0.65)",
+                black: "#2F2F2F",
             },
             borderColor: (theme) => ({
                 lightBlack: "#2D2D2D",
