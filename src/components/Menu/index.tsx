@@ -3,7 +3,11 @@ import Hamburger from "hamburger-react";
 import FullMenu from "@components/FullMenu";
 import { motion } from "framer-motion";
 
-const Menu: React.FC = ({}) => {
+interface MenuProps {
+    isFixed: boolean;
+}
+
+const Menu: React.FC<MenuProps> = ({ isFixed }) => {
     const [isOpenMobile, setIsOpenMobile] = useState(false);
 
     return (
@@ -15,34 +19,67 @@ const Menu: React.FC = ({}) => {
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <p>Home</p>
+                        <p
+                            className={`${
+                                isFixed
+                                    ? "text-reallyBlack font-bold"
+                                    : "text-white"
+                            }`}
+                        >
+                            Home
+                        </p>
                     </motion.li>
                     <motion.li
                         className="mx-3 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <p>About</p>
+                        <p
+                            className={`${
+                                isFixed
+                                    ? "text-reallyBlack font-bold"
+                                    : "text-white"
+                            }`}
+                        >
+                            About
+                        </p>
                     </motion.li>
                     <motion.li
                         className="mx-3 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <p>My work</p>
+                        <p
+                            className={`${
+                                isFixed
+                                    ? "text-reallyBlack font-bold"
+                                    : "text-white"
+                            }`}
+                        >
+                            My work
+                        </p>
                     </motion.li>
                     <motion.li
                         className="mx-3 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
-                        <p>Contact</p>
+                        <p
+                            className={`${
+                                isFixed
+                                    ? "text-reallyBlack font-bold"
+                                    : "text-white"
+                            }`}
+                        >
+                            Contact
+                        </p>
                     </motion.li>
                 </ul>
 
                 <div className="flex-none sm:hidden">
                     <Hamburger
                         toggled={isOpenMobile}
+                        color={`${isFixed ? "#222" : "#fff"}`}
                         toggle={() => setIsOpenMobile(!isOpenMobile)}
                     />
                 </div>

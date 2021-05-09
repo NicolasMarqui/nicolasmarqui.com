@@ -1,3 +1,4 @@
+import Balls from "@components/Balls";
 import Container from "@components/Container";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
@@ -16,6 +17,7 @@ const Hero: React.FC = ({}) => {
 
     return (
         <div className="py-48 md:py-0 md:h-screen flex justify-center items-center relative">
+            {/* <Balls /> */}
             <Container>
                 <h3 className="font-zilla text-3xl md:text-7xl">
                     Hello my name is

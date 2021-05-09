@@ -1,22 +1,54 @@
 import Container from "@components/Container";
 import Menu from "@components/Menu";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { headerVariant } from "@utils/variants";
 
 const Nav: React.FC = ({}) => {
+    const [isFixed, setIsFixed] = useState(false);
+
+    const fixedNav = () => {
+        if (window.pageYOffset > 300) {
+            setIsFixed(true);
+        } else {
+            setIsFixed(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", fixedNav);
+
+        return () => {
+            window.removeEventListener("scroll", fixedNav);
+        };
+    }, []);
+
     return (
-        <header className="absolute top-10 left-0 right-0 z-20">
+        <motion.header
+            initial={{ y: isFixed ? -100 : -100 }}
+            variants={headerVariant}
+            animate={isFixed ? "furtherDown" : "down"}
+            className={`${
+                isFixed ? "fixed bg-white top-0" : "absolute top-5"
+            } left-0 right-0 z-30`}
+        >
             <Container>
                 <div className="w-full flex items-center justify-between">
                     <div className="flex-none">
-                        <h1 className="font-zilla text-4xl text-white font-bold hasDetail relative">
+                        <motion.h1
+                            className={`font-zilla text-4xl font-bold hasDetail relative ${
+                                isFixed ? "text-black py-3" : "text-white"
+                            }`}
+                        >
                             NM
-                        </h1>
+                        </motion.h1>
                     </div>
                     <div className="flex-none">
-                        <Menu />
+                        <Menu isFixed={isFixed} />
                     </div>
                 </div>
             </Container>
-        </header>
+        </motion.header>
     );
 };
 export default Nav;

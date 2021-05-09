@@ -14,6 +14,7 @@ const Work: React.FC = ({}) => {
                 <div className="mt-10">
                     {projects.map((proj: WorkProps, idx: number) => (
                         <WorkCard
+                            key={proj.id}
                             work={proj}
                             isOtherSide={idx % 2 === 0 ? false : true}
                         />
