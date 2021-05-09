@@ -66,3 +66,17 @@
         }
     }
 }
+
+.bg-home {
+    background-image: url("../../../public/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about_title {
+    line-height: 3.5rem;
+}
+
+.socials {
+    top: 50%;
+}

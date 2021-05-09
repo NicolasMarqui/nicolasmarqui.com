@@ -2,23 +2,17 @@ import Container from "@components/Container";
 
 const About: React.FC = ({}) => {
     return (
-        <div className="py-20 border-b-2 border-t-2 border-lightBlack">
-            <Container>
+        <div className="border-b-2 border-t-2 border-lightBlack">
+            <Container classes="py-20  border-l-2 border-lightBlack">
                 <pre>
                     <code className="font-zilla font-light text-4xl text-lightWhite">
                         &lt;section&gt;
                     </code>
                 </pre>
-                <h2 className="my-7 font-bold font-zilla text-4xl md:text-6xl md:w-5/6">
-                    I’m a full-stack developer who loves
-                    <span className="sm:mx-1 text-react"> React, </span>
-                    <span className="sm:mx-1 text-nextJS">Next, </span>
-                    <span className="sm:mx-1 text-graphql">Graphql, </span>
-                    <span className="sm:mx-1 text-reactNative">
-                        React Native,
-                    </span>
-                    <span className="sm:mx-1 text-nodeJS">NodeJS</span> and many
-                    others!
+                <h2 className="my-7 font-bold font-zilla text-4xl md:text-6xl leading-none md:about_title">
+                    I have a passion for web and mobile development. I've been
+                    coding for 2+ years and every day i'm trying to learn new
+                    stuff!
                 </h2>
                 <pre>
                     <code className="font-zilla font-light text-4xl text-lightWhite">

@@ -15,7 +15,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
             <nav className="w-full">
                 <ul className="list-none m-0 p-0 flex-row items-center text-right hidden sm:flex nav__menu">
                     <motion.li
-                        className="mx-3 cursor-pointer"
+                        className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
@@ -26,11 +26,14 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                                     : "text-white"
                             }`}
                         >
+                            <span className="text-primaryRed font-bold mr-2">
+                                01.{" "}
+                            </span>
                             Home
                         </p>
                     </motion.li>
                     <motion.li
-                        className="mx-3 cursor-pointer"
+                        className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
@@ -41,11 +44,14 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                                     : "text-white"
                             }`}
                         >
+                            <span className="text-primaryRed font-bold mr-2">
+                                02.
+                            </span>
                             About
                         </p>
                     </motion.li>
                     <motion.li
-                        className="mx-3 cursor-pointer"
+                        className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
@@ -56,11 +62,14 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                                     : "text-white"
                             }`}
                         >
+                            <span className="text-primaryRed font-bold mr-2">
+                                03.
+                            </span>
                             My work
                         </p>
                     </motion.li>
                     <motion.li
-                        className="mx-3 cursor-pointer"
+                        className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                     >
@@ -71,6 +80,9 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                                     : "text-white"
                             }`}
                         >
+                            <span className="text-primaryRed font-bold mr-2">
+                                04.
+                            </span>
                             Contact
                         </p>
                     </motion.li>

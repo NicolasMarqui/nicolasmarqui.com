@@ -29,7 +29,9 @@ const Nav: React.FC = ({}) => {
             variants={headerVariant}
             animate={isFixed ? "furtherDown" : "down"}
             className={`${
-                isFixed ? "fixed bg-white top-0" : "absolute top-5"
+                isFixed
+                    ? "fixed bg-white top-0 shadow-md"
+                    : "absolute top-0 border-lightBlack border-b-2 py-7"
             } left-0 right-0 z-30`}
         >
             <Container>

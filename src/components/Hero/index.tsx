@@ -16,9 +16,8 @@ const Hero: React.FC = ({}) => {
     };
 
     return (
-        <div className="py-48 md:py-0 md:h-screen flex justify-center items-center relative">
-            {/* <Balls /> */}
-            <Container>
+        <div className="flex justify-center items-center relative z-20">
+            <Container classes="border-lightBlack border-l-2 h-full flex flex-col justify-center py-48 md:py-64">
                 <h3 className="font-zilla text-3xl md:text-7xl">
                     Hello my name is
                 </h3>
@@ -27,12 +26,18 @@ const Hero: React.FC = ({}) => {
                 </h2>
 
                 <p className="mt-4 text-xl md:text-2xl md:w-2/3">
-                    I’m a full stack developer focused on frontend who also
-                    loves to have a little backend adventure
+                    I’m a creative front-end developer who loves{" "}
+                    <span className="sm:mx-1 text-react"> React, </span>{" "}
+                    <span className="sm:mx-1 text-nextJS">Next, </span>,
+                    <span className="sm:mx-1 text-reactNative">
+                        React Native,
+                    </span>{" "}
+                    and <span className="sm:mx-1 text-nodeJS">NodeJS</span>, but
+                    who also loves to learn new technologies ⚡
                 </p>
 
                 <motion.div
-                    className="mt-9 bg-primaryRed inline-block py-3 px-7 rounded-lg cursor-pointer hover:bg-primaryRedHover"
+                    className="mt-9 bg-primaryRed py-3 px-7 rounded-lg cursor-pointer hover:bg-primaryRedHover w-full md:w-56 flex items-center justify-center"
                     whileHover={{ scale: 1.1005 }}
                     whileTap={{ scale: 0.9 }}
                 >
