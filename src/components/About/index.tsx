@@ -2,7 +2,7 @@ import Container from "@components/Container";
 
 const About: React.FC = ({}) => {
     return (
-        <div className="border-b-2 border-t-2 border-lightBlack">
+        <div className="border-b-2 border-t-2 border-lightBlack" id="about">
             <Container classes="py-20  border-l-2 border-lightBlack">
                 <pre>
                     <code className="font-zilla font-light text-4xl text-lightWhite">

@@ -5,7 +5,7 @@ import { WorkProps } from "@utils/types";
 
 const Work: React.FC = ({}) => {
     return (
-        <div className="py-20 border-b-2 border-lightBlack">
+        <div className="py-20 border-b-2 border-lightBlack" id="work">
             <Container>
                 <h2 className="text-6xl md:text-8xl font-zilla font-bold md:-mt-2 text-center">
                     My work

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Hamburger from "hamburger-react";
 import FullMenu from "@components/FullMenu";
 import { motion } from "framer-motion";
+import useSmoothScroll from "react-smooth-scroll-hook";
 
 interface MenuProps {
     isFixed: boolean;
@@ -9,6 +10,12 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ isFixed }) => {
     const [isOpenMobile, setIsOpenMobile] = useState(false);
+    const ref = useRef(process.browser ? document.documentElement : undefined);
+    const { scrollTo } = useSmoothScroll({
+        ref,
+        speed: 50,
+        direction: "y",
+    });
 
     return (
         <>
@@ -18,6 +25,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                         className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
+                        onClick={() => scrollTo("#home")}
                     >
                         <p
                             className={`${
@@ -36,6 +44,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                         className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
+                        onClick={() => scrollTo("#about")}
                     >
                         <p
                             className={`${
@@ -54,6 +63,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                         className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
+                        onClick={() => scrollTo("#work")}
                     >
                         <p
                             className={`${
@@ -72,6 +82,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                         className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
+                        onClick={() => scrollTo("#contact")}
                     >
                         <p
                             className={`${

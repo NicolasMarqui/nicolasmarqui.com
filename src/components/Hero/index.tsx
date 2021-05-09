@@ -1,23 +1,34 @@
-import Balls from "@components/Balls";
 import Container from "@components/Container";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import Lottie from "react-lottie";
+import useSmoothScroll from "react-smooth-scroll-hook";
+
+const SCROLL__ANIMATION = require("../../../public/animations/scroll.json");
+
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: SCROLL__ANIMATION,
+    rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+    },
+};
 
 const Hero: React.FC = ({}) => {
-    const SCROLL__ANIMATION = require("../../../public/animations/scroll.json");
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: SCROLL__ANIMATION,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice",
-        },
-    };
+    const ref = useRef(process.browser ? document.documentElement : undefined);
+    const { scrollTo } = useSmoothScroll({
+        ref,
+        speed: 50,
+        direction: "y",
+    });
 
     return (
-        <div className="flex justify-center items-center relative z-20">
-            <Container classes="border-lightBlack border-l-2 h-full flex flex-col justify-center py-48 md:py-64">
+        <div
+            className="flex justify-center items-center relative z-20"
+            id="home"
+        >
+            <Container classes="border-lightBlack border-l-2 h-full flex flex-col justify-center py-48 2xl:py-64">
                 <h3 className="font-zilla text-3xl md:text-7xl">
                     Hello my name is
                 </h3>
@@ -40,6 +51,7 @@ const Hero: React.FC = ({}) => {
                     className="mt-9 bg-primaryRed py-3 px-7 rounded-lg cursor-pointer hover:bg-primaryRedHover w-full md:w-56 flex items-center justify-center"
                     whileHover={{ scale: 1.1005 }}
                     whileTap={{ scale: 0.9 }}
+                    onClick={() => scrollTo("#work")}
                 >
                     <p className="font-bold">See my work</p>
                 </motion.div>
