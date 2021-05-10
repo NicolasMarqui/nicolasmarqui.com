@@ -1,5 +1,4 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoIosLink } from "react-icons/io";
 
 const Socials: React.FC = ({}) => {
     return (
@@ -24,17 +23,6 @@ const Socials: React.FC = ({}) => {
                         className="cursor-pointer block px-3"
                     >
                         <AiFillLinkedin size={30} />
-                    </a>
-                </li>
-
-                <li className="mt-4">
-                    <a
-                        href="https://github.com/NicolasMarqui"
-                        target="_blank"
-                        rel="noopener"
-                        className="cursor-pointer block px-3"
-                    >
-                        <IoIosLink size={30} color="#fff" />
                     </a>
                 </li>
             </ul>

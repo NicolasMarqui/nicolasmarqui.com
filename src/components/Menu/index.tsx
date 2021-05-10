@@ -6,10 +6,11 @@ import useSmoothScroll from "react-smooth-scroll-hook";
 
 interface MenuProps {
     isFixed: boolean;
+    isOpenMobile: boolean;
+    handleMobile: (value: boolean) => any;
 }
 
-const Menu: React.FC<MenuProps> = ({ isFixed }) => {
-    const [isOpenMobile, setIsOpenMobile] = useState(false);
+const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
     const ref = useRef(process.browser ? document.documentElement : undefined);
     const { scrollTo } = useSmoothScroll({
         ref,
@@ -103,12 +104,10 @@ const Menu: React.FC<MenuProps> = ({ isFixed }) => {
                     <Hamburger
                         toggled={isOpenMobile}
                         color={`${isFixed ? "#222" : "#fff"}`}
-                        toggle={() => setIsOpenMobile(!isOpenMobile)}
+                        toggle={handleMobile}
                     />
                 </div>
             </nav>
-
-            {isOpenMobile && <FullMenu />}
         </>
     );
 };
