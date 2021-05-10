@@ -7,15 +7,24 @@ import {
     SiTailwindcss,
     SiTypescript,
     SiFirebase,
+    SiStyledComponents,
+    SiNextDotJs,
+    SiHeroku,
+    SiSass,
+    SiJavascript,
+    SiHtml5,
+    SiJquery,
+    SiPython,
 } from "react-icons/si";
+import { IoLogoVercel } from "react-icons/io5";
+import { DiDjango } from "react-icons/di";
 
 export const projects = [
     {
         id: 1,
         title: "Nivelo",
         type: "Full-stack",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "🎓 Sistema web para nivelamento acadêmico",
         cover: "/projects/nivelo.jpg",
         tech: [
             {
@@ -58,6 +67,21 @@ export const projects = [
                 name: "Typescript",
                 icon: <SiTypescript size={27} color="#fff" />,
             },
+            {
+                id: 9,
+                name: "NextJS",
+                icon: <SiNextDotJs size={27} color="#fff" />,
+            },
+            {
+                id: 10,
+                name: "Heroku",
+                icon: <SiHeroku size={27} color="#fff" />,
+            },
+            {
+                id: 11,
+                name: "Vercel",
+                icon: <IoLogoVercel size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Nivelo",
         live: "https://nivelo.vercel.app/",
@@ -66,8 +90,7 @@ export const projects = [
         id: 2,
         title: "Flate",
         type: "Full-stack",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "🔑 Real Estate website built with Next and Prisma",
         cover: "/projects/flate.jpg",
         tech: [
             {
@@ -90,6 +113,16 @@ export const projects = [
                 name: "Typescript",
                 icon: <SiTypescript size={27} color="#fff" />,
             },
+            {
+                id: 5,
+                name: "NextJS",
+                icon: <SiNextDotJs size={27} color="#fff" />,
+            },
+            {
+                id: 6,
+                name: "Vercel",
+                icon: <IoLogoVercel size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Flate",
         live: "https://flate.vercel.app/",
@@ -98,8 +131,7 @@ export const projects = [
         id: 3,
         title: "Marca Ponto",
         type: "Front-end",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "⏰ Controle de ponto online",
         cover: "/projects/marca_ponto.png",
         tech: [
             {
@@ -122,16 +154,21 @@ export const projects = [
                 name: "Typescript",
                 icon: <SiTypescript size={27} color="#fff" />,
             },
+            {
+                id: 5,
+                name: "SASS",
+                icon: <SiSass size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/MarcaPonto",
         live: "https://marcaponto.netlify.app/",
+        video: "https://www.youtube.com/watch?v=TSbGiKnT9HY",
     },
     {
         id: 4,
         title: "Focalize",
         type: "Front-end",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "📆 Simple app that helps you to focus",
         cover: "/projects/focalize.jpg",
         tech: [
             {
@@ -144,6 +181,11 @@ export const projects = [
                 name: "Typescript",
                 icon: <SiTypescript size={27} color="#fff" />,
             },
+            {
+                id: 3,
+                name: "Styled Components",
+                icon: <SiStyledComponents size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Focalize",
     },
@@ -151,8 +193,7 @@ export const projects = [
         id: 5,
         title: "Feasty",
         type: "Front-end",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "🍔 Find restaurants across the globe",
         cover: "/projects/feasty.jpg",
         tech: [
             {
@@ -170,6 +211,11 @@ export const projects = [
                 name: "Firebase",
                 icon: <SiFirebase size={27} color="#fff" />,
             },
+            {
+                id: 4,
+                name: "Styled Components",
+                icon: <SiStyledComponents size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Feasty",
     },
@@ -177,8 +223,7 @@ export const projects = [
         id: 6,
         title: "Botant",
         type: "Front-end",
-        description:
-            "I’m a full stack developer focused on frontend who also loves to have a little backend adventure",
+        description: "🌱 Plant Care Reminder & Water Tracker",
         cover: "/projects/botant.jpg",
         tech: [
             {
@@ -191,7 +236,77 @@ export const projects = [
                 name: "Typescript",
                 icon: <SiTypescript size={27} color="#fff" />,
             },
+            {
+                id: 3,
+                name: "Styled Components",
+                icon: <SiStyledComponents size={27} color="#fff" />,
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Botant",
+    },
+    {
+        id: 7,
+        title: "Foodz",
+        type: "Full-stack",
+        description: "🍕 Delivery System built using Javascript and Django",
+        cover: "/projects/foodz.jpg",
+        tech: [
+            {
+                id: 1,
+                name: "HTML",
+                icon: <SiHtml5 size={27} color="#fff" />,
+            },
+            {
+                id: 2,
+                name: "SASS",
+                icon: <SiSass size={27} color="#fff" />,
+            },
+            {
+                id: 3,
+                name: "Javascript",
+                icon: <SiJavascript size={27} color="#fff" />,
+            },
+            {
+                id: 4,
+                name: "Jquery",
+                icon: <SiJquery size={27} color="#fff" />,
+            },
+            {
+                id: 5,
+                name: "Django",
+                icon: <DiDjango size={27} color="#fff" />,
+            },
+            {
+                id: 6,
+                name: "Pyhton",
+                icon: <SiPython size={27} color="#fff" />,
+            },
+        ],
+        repo: "https://github.com/NicolasMarqui/Foodz",
+    },
+    {
+        id: 8,
+        title: "Marca Ponto App",
+        type: "Front-end",
+        description: "⏰ App para controle de ponto online",
+        cover: "/projects/marca_pontoApp.jpg",
+        tech: [
+            {
+                id: 1,
+                name: "React Native",
+                icon: <FaReact size={27} color="#fff" />,
+            },
+            {
+                id: 2,
+                name: "Javascript",
+                icon: <SiJavascript size={27} color="#fff" />,
+            },
+            {
+                id: 3,
+                name: "Styled Components",
+                icon: <SiStyledComponents size={27} color="#fff" />,
+            },
+        ],
+        repo: "https://github.com/NicolasMarqui/MarcaPonto-APP",
     },
 ];

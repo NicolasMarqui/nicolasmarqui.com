@@ -9,6 +9,7 @@ const Socials: React.FC = ({}) => {
                     <a
                         href="https://github.com/NicolasMarqui"
                         target="_blank"
+                        rel="noopener"
                         className="cursor-pointer block px-3"
                     >
                         <AiFillGithub size={30} />
@@ -17,8 +18,9 @@ const Socials: React.FC = ({}) => {
 
                 <li className="mt-4">
                     <a
-                        href="https://github.com/NicolasMarqui"
+                        href="https://www.linkedin.com/in/nicolas-marqui/"
                         target="_blank"
+                        rel="noopener"
                         className="cursor-pointer block px-3"
                     >
                         <AiFillLinkedin size={30} />
@@ -29,6 +31,7 @@ const Socials: React.FC = ({}) => {
                     <a
                         href="https://github.com/NicolasMarqui"
                         target="_blank"
+                        rel="noopener"
                         className="cursor-pointer block px-3"
                     >
                         <IoIosLink size={30} color="#fff" />

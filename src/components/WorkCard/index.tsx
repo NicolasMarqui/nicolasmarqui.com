@@ -8,7 +8,7 @@ interface WorkCardProps {
 }
 
 const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
-    const { type, title, description, cover, repo, live, tech } = work;
+    const { type, title, description, cover, repo, live, tech, video } = work;
 
     const handleEnterLive = () => {
         // document.querySelector(".cursor").classList.add("cursor__live");
@@ -65,9 +65,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
                                 whileTap={{ scale: 0.9 }}
                                 href={live}
                                 target="_blank"
+                                rel="noopener"
                                 className="block font-bold py-3 px-5 w-full h-full"
-                                onMouseEnter={handleEnterLive}
-                                onMouseLeave={handleLeaveLive}
                             >
                                 Live site
                             </motion.a>
@@ -80,11 +79,27 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
                             whileTap={{ scale: 0.9 }}
                             href={repo}
                             target="_blank"
+                            rel="noopener"
                             className="block font-bold py-3 px-5 w-full h-full"
                         >
                             Code
                         </motion.a>
                     </div>
+
+                    {video && (
+                        <div className="bg-primaryRed ml-2">
+                            <motion.a
+                                whileHover={{ scale: 1.14 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={video}
+                                target="_blank"
+                                rel="noopener"
+                                className="block font-bold py-3 px-5 w-full h-full"
+                            >
+                                View Video
+                            </motion.a>
+                        </div>
+                    )}
                 </div>
             </div>
             <div

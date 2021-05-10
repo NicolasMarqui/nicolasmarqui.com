@@ -13,4 +13,5 @@ export interface WorkProps {
     tech: TechProps[];
     repo: string;
     live: string;
+    video: string;
 }
