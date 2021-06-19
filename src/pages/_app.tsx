@@ -1,13 +1,15 @@
 import React from "react";
 import { AppProps } from "next/app";
+import Head from "next/head";
+import { ThemeProvider } from "next-themes";
+
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import Cursor from "@components/Cursor";
-import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
-        <>
+        <ThemeProvider attribute="class">
             {/* <Cursor /> */}
             <Head>
                 <title>Nicolas Marqui - Front-end Developer</title>
@@ -116,7 +118,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 />
             </Head>
             <Component {...pageProps} />
-        </>
+        </ThemeProvider>
     );
 }
 

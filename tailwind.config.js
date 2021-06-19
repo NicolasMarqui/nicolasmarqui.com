@@ -1,6 +1,6 @@
 module.exports = {
     purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: "class", // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
@@ -16,6 +16,14 @@ module.exports = {
                 overlay: "rgba(0, 0, 0, 0.65)",
                 black: "#2F2F2F",
                 reallyBlack: "#222",
+
+                lightPrimary: "#FBFBFB",
+                lightSecondary: "rgba(240, 240, 240, 0.42)",
+                lightLines: "#DCDCDC",
+                lightCircles: "#D2D2D2",
+
+                darkPrimary: "#282828",
+                darkLines: "#494949",
             },
             borderColor: (theme) => ({
                 lightBlack: "#2D2D2D",

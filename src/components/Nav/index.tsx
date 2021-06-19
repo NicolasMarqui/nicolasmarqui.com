@@ -4,8 +4,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { headerVariant } from "@utils/variants";
 import FullMenu from "@components/FullMenu";
+import { useTheme } from "next-themes";
 
 const Nav: React.FC = ({}) => {
+    const { theme, setTheme } = useTheme();
+
     const [isOpenMobile, setIsOpenMobile] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
 
@@ -34,14 +37,14 @@ const Nav: React.FC = ({}) => {
                 className={`${
                     isFixed
                         ? "fixed bg-white top-0 shadow-md"
-                        : "absolute top-0 border-lightBlack border-b-2 py-7"
+                        : "absolute top-0  py-7"
                 } left-0 right-0 z-30`}
             >
                 <Container>
                     <div className="w-full flex items-center justify-between">
                         <div className="flex-none">
                             <motion.h1
-                                className={`font-zilla text-4xl font-bold hasDetail relative ${
+                                className={`text-2xl font-bold relative ${
                                     isFixed ? "text-black py-3" : "text-white"
                                 }`}
                             >
@@ -56,6 +59,18 @@ const Nav: React.FC = ({}) => {
                                     setIsOpenMobile(!isOpenMobile)
                                 }
                             />
+                        </div>
+
+                        <div className="ml-2 flex-none">
+                            <button
+                                onClick={() =>
+                                    setTheme(
+                                        theme === "dark" ? "light" : "dark"
+                                    )
+                                }
+                            >
+                                Change
+                            </button>
                         </div>
                     </div>
                 </Container>

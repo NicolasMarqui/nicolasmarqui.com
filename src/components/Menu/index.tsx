@@ -26,7 +26,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                         className="mx-4 cursor-pointer"
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
-                        onClick={() => scrollTo("#home")}
+                        onClick={() => scrollTo("#projects")}
                     >
                         <p
                             className={`${
@@ -35,10 +35,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                                     : "text-white"
                             }`}
                         >
-                            <span className="text-primaryRed font-bold mr-2">
-                                01.{" "}
-                            </span>
-                            Home
+                            Projects
                         </p>
                     </motion.li>
                     <motion.li
@@ -54,29 +51,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                                     : "text-white"
                             }`}
                         >
-                            <span className="text-primaryRed font-bold mr-2">
-                                02.
-                            </span>
                             About
-                        </p>
-                    </motion.li>
-                    <motion.li
-                        className="mx-4 cursor-pointer"
-                        whileHover={{ scale: 1.16 }}
-                        whileTap={{ scale: 0.8 }}
-                        onClick={() => scrollTo("#work")}
-                    >
-                        <p
-                            className={`${
-                                isFixed
-                                    ? "text-reallyBlack font-bold"
-                                    : "text-white"
-                            }`}
-                        >
-                            <span className="text-primaryRed font-bold mr-2">
-                                03.
-                            </span>
-                            My work
                         </p>
                     </motion.li>
                     <motion.li
@@ -92,9 +67,6 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                                     : "text-white"
                             }`}
                         >
-                            <span className="text-primaryRed font-bold mr-2">
-                                04.
-                            </span>
                             Contact
                         </p>
                     </motion.li>
