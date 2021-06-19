@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import FullMenu from "@components/FullMenu";
 import { motion } from "framer-motion";
 import useSmoothScroll from "react-smooth-scroll-hook";
+import { useTheme } from "next-themes";
 
 interface MenuProps {
     isFixed: boolean;
@@ -11,6 +12,7 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
+    const { theme } = useTheme();
     const ref = useRef(process.browser ? document.documentElement : undefined);
     const { scrollTo } = useSmoothScroll({
         ref,
@@ -28,13 +30,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                         whileTap={{ scale: 0.8 }}
                         onClick={() => scrollTo("#projects")}
                     >
-                        <p
-                            className={`${
-                                isFixed
-                                    ? "text-reallyBlack font-bold"
-                                    : "text-white"
-                            }`}
-                        >
+                        <p className="text-reallyBlack dark:text-white">
                             Projects
                         </p>
                     </motion.li>
@@ -44,13 +40,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                         whileTap={{ scale: 0.8 }}
                         onClick={() => scrollTo("#about")}
                     >
-                        <p
-                            className={`${
-                                isFixed
-                                    ? "text-reallyBlack font-bold"
-                                    : "text-white"
-                            }`}
-                        >
+                        <p className="text-reallyBlack dark:text-white">
                             About
                         </p>
                     </motion.li>
@@ -60,13 +50,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                         whileTap={{ scale: 0.8 }}
                         onClick={() => scrollTo("#contact")}
                     >
-                        <p
-                            className={`${
-                                isFixed
-                                    ? "text-reallyBlack font-bold"
-                                    : "text-white"
-                            }`}
-                        >
+                        <p className="text-reallyBlack dark:text-white">
                             Contact
                         </p>
                     </motion.li>
@@ -75,7 +59,7 @@ const Menu: React.FC<MenuProps> = ({ isFixed, isOpenMobile, handleMobile }) => {
                 <div className="flex-none sm:hidden">
                     <Hamburger
                         toggled={isOpenMobile}
-                        color={`${isFixed ? "#222" : "#fff"}`}
+                        color={`${theme === "light" ? "#222" : "#fff"}`}
                         toggle={handleMobile}
                     />
                 </div>

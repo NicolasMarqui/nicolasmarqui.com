@@ -36,7 +36,7 @@ const Nav: React.FC = ({}) => {
                 animate={isFixed ? "furtherDown" : "down"}
                 className={`${
                     isFixed
-                        ? "fixed bg-white top-0 shadow-md"
+                        ? "fixed bg-white dark:bg-gray-700 top-0 shadow-md"
                         : "absolute top-0  py-7"
                 } left-0 right-0 z-30`}
             >
@@ -45,7 +45,9 @@ const Nav: React.FC = ({}) => {
                         <div className="flex-none">
                             <motion.h1
                                 className={`text-2xl font-bold relative ${
-                                    isFixed ? "text-black py-3" : "text-white"
+                                    isFixed
+                                        ? "text-black dark:text-white py-3"
+                                        : "text-black dark:text-white"
                                 }`}
                             >
                                 NM

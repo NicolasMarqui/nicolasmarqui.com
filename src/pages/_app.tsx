@@ -10,7 +10,7 @@ import Cursor from "@components/Cursor";
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <ThemeProvider attribute="class">
-            {/* <Cursor /> */}
+            <Cursor />
             <Head>
                 <title>Nicolas Marqui - Front-end Developer</title>
                 <link rel="shortcut icon" href="/icon-512.png" />
