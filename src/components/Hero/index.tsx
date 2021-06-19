@@ -29,10 +29,8 @@ const Hero: React.FC = ({}) => {
             id="home"
         >
             <Container classes="border-lightBlack border-l-2 h-full flex flex-col justify-center py-48 2xl:py-64">
-                <h3 className="font-zilla text-3xl md:text-7xl">
-                    Hello my name is
-                </h3>
-                <h2 className="text-5xl sm:text-6xl md:text-9xl font-zilla font-bold md:-mt-2">
+                <h3 className=" text-3xl md:text-7xl">Hello my name is</h3>
+                <h2 className="text-5xl sm:text-6xl md:text-9xl  font-bold md:-mt-2">
                     Nicolas Marqui
                 </h2>
 

@@ -38,7 +38,7 @@ module.exports = {
                 borderRadius: ["group-hover", "hover"],
             },
         },
-        fontFamily: ["Raleway", "Zilla Slab"],
+        fontFamily: ["TTHoves", "Serif"],
         container: {
             center: true,
             padding: {
