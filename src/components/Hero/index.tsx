@@ -17,7 +17,7 @@ const Hero: React.FC = ({}) => {
             className="flex justify-center items-center relative h-screen"
             id="home"
         >
-            {/* <Lines /> */}
+            <Lines />
             <Container classes="flex flex-col justify-center relative">
                 <Socials />
                 <h3 className="text-2xl md:text-3xl z-30">Nicolas Marqui</h3>

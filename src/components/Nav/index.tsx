@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { headerVariant } from "@utils/variants";
 import FullMenu from "@components/FullMenu";
 import { useTheme } from "next-themes";
+import Toggle from "@components/Toggle";
 
 const Nav: React.FC = ({}) => {
     const { theme, setTheme } = useTheme();
@@ -36,7 +37,7 @@ const Nav: React.FC = ({}) => {
                 animate={isFixed ? "furtherDown" : "down"}
                 className={`${
                     isFixed
-                        ? "fixed bg-white dark:bg-gray-700 top-0 shadow-md"
+                        ? "fixed bg-white dark:bg-darkPrimary top-0 shadow-md"
                         : "absolute top-0  py-7"
                 } left-0 right-0 z-30`}
             >
@@ -53,26 +54,16 @@ const Nav: React.FC = ({}) => {
                                 NM
                             </motion.h1>
                         </div>
-                        <div className="flex-none">
+                        <div className="flex-none flex items-center">
                             <Menu
-                                isFixed={isFixed}
                                 isOpenMobile={isOpenMobile}
                                 handleMobile={() =>
                                     setIsOpenMobile(!isOpenMobile)
                                 }
                             />
-                        </div>
-
-                        <div className="ml-2 flex-none">
-                            <button
-                                onClick={() =>
-                                    setTheme(
-                                        theme === "dark" ? "light" : "dark"
-                                    )
-                                }
-                            >
-                                Change
-                            </button>
+                            <div className="ml-2 flex-none flex items-center justify-center">
+                                <Toggle />
+                            </div>
                         </div>
                     </div>
                 </Container>

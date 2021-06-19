@@ -2,8 +2,11 @@ import Container from "@components/Container";
 
 const Contact: React.FC = ({}) => {
     return (
-        <div className="border-b-2 border-t-2 border-lightBlack" id="contact">
-            <Container classes="py-20  border-l-2 border-lightBlack">
+        <div
+            className="relative bg-lightSecondary dark:bg-reallyBlack"
+            id="contact"
+        >
+            <Container classes="py-20">
                 <pre>
                     <code className=" font-light text-4xl text-lightWhite">
                         &lt;section&gt;

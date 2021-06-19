@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 
-const Socials: React.FC = ({}) => {
+const Socials: React.FC = () => {
+    const { theme } = useTheme();
+
     return (
         <div className="absolute inset-0 z-10">
             <motion.a
-                className="circle absolute circle__1 flex justify-center items-center cursor-pointer"
+                className={`circle absolute circle__1 flex justify-center items-center cursor-pointer ${
+                    theme === "light" ? "circle__light" : "circle__dark"
+                }`}
                 href="https://www.linkedin.com/in/nicolas-marqui/"
                 target="_blank"
             >
@@ -16,7 +21,9 @@ const Socials: React.FC = ({}) => {
             </motion.a>
 
             <motion.a
-                className="circle absolute circle__2 flex justify-center items-center cursor-pointer"
+                className={`circle absolute circle__2 flex justify-center items-center cursor-pointer ${
+                    theme === "light" ? "circle__light" : "circle__dark"
+                }`}
                 href="mailto:nicolas.marqui@fatec.sp.gov.br"
                 target="_blank"
             >
@@ -26,7 +33,9 @@ const Socials: React.FC = ({}) => {
             </motion.a>
 
             <motion.a
-                className="circle absolute circle__3 flex justify-center items-center cursor-pointer"
+                className={`circle absolute circle__3 flex justify-center items-center cursor-pointer ${
+                    theme === "light" ? "circle__light" : "circle__dark"
+                }`}
                 href="https://github.com/NicolasMarqui"
                 target="_blank"
             >
