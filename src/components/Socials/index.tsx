@@ -10,7 +10,7 @@ const Socials: React.FC = () => {
         <div className="absolute inset-0 z-10">
             <motion.a
                 className={`circle absolute circle__1 flex justify-center items-center cursor-pointer ${
-                    theme === "light" ? "circle__light" : "circle__dark"
+                    theme === "dark" ? "circle__dark" : "circle__light"
                 }`}
                 href="https://www.linkedin.com/in/nicolas-marqui/"
                 target="_blank"
@@ -22,7 +22,7 @@ const Socials: React.FC = () => {
 
             <motion.a
                 className={`circle absolute circle__2 flex justify-center items-center cursor-pointer ${
-                    theme === "light" ? "circle__light" : "circle__dark"
+                    theme === "dark" ? "circle__dark" : "circle__light"
                 }`}
                 href="mailto:nicolas.marqui@fatec.sp.gov.br"
                 target="_blank"
@@ -34,7 +34,7 @@ const Socials: React.FC = () => {
 
             <motion.a
                 className={`circle absolute circle__3 flex justify-center items-center cursor-pointer ${
-                    theme === "light" ? "circle__light" : "circle__dark"
+                    theme === "dark" ? "circle__dark" : "circle__light"
                 }`}
                 href="https://github.com/NicolasMarqui"
                 target="_blank"
