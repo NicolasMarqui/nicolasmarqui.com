@@ -1,6 +1,7 @@
 import { TechProps, WorkProps } from "@utils/types";
 import { motion } from "framer-motion";
-import Tooltip from "react-tooltip";
+import { FiExternalLink } from "react-icons/fi";
+import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
 
 interface WorkCardProps {
     work: WorkProps;
@@ -10,83 +11,81 @@ interface WorkCardProps {
 const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
     const { type, title, description, cover, repo, live, tech, video } = work;
 
-    const handleEnterLive = () => {
-        // document.querySelector(".cursor").classList.add("cursor__live");
+    const handleEnterCaseStudy = () => {
+        document.querySelector(".cursor").classList.add("cursor__CaseStudy");
     };
-    const handleLeaveLive = () => {
-        // document.querySelector(".cursor").classList.remove("cursor__live");
+    const handleLeaveCaseStudy = () => {
+        document.querySelector(".cursor").classList.remove("cursor__CaseStudy");
     };
 
-    // md:w-9/12 lg:w-8/12
+    const handleEnterButton = () => {
+        document.querySelector(".cursor").classList.add("cursor__cardButton");
+    };
+    const handleLeaveButton = () => {
+        document
+            .querySelector(".cursor")
+            .classList.remove("cursor__cardButton");
+    };
 
     return (
-        <div className="w-full bg-black rounded-lg flex flex-col lg:flex-row my-16 mx-auto">
-            <div
-                className={`flex-1 flex flex-col align-center justify-between order-2 border-primaryRed ${
-                    isOtherSide
-                        ? "lg:order-2 lg:border-l-8 p-6 lg:py-6 lg:pl-6 lg:pr-0"
-                        : "lg:order-1 lg:border-r-8 p-8 lg:py-8 lg:pr-0 lg:pl-8"
-                }`}
-            >
-                <h4 className="font-bold text-primaryRed text-sm">{type}</h4>
-                <h3 className="text-white font-bold text-3xl sm:text-4xl">
+        <div className="w-full  rounded-lg flex flex-col lg:flex-row my-16 shadow dark:shadow-md overflow-hidden lg:items-center">
+            <div className="flex-1 flex flex-col align-center h-full p-4 order-2 lg:order-1">
+                <p className="font-light mt-4 lg:text-2xl">{type}</p>
+                <h3 className="text-6xl md:text-7xl 2xl:text-9xl font-bold text-reallyBlack dark:text-white">
                     {title}
                 </h3>
 
-                <h5 className="mt-7 font-bold text-xs">Description</h5>
-
-                <p className="font-light mt-4">{description}</p>
-
-                <h5 className="mt-7 font-bold text-xs">Technologies</h5>
+                <p className="font-light my-9 md:text-2xl 2xl:text-4xl">
+                    {description}
+                </p>
 
                 <div className="flex  flex-wrap">
-                    {tech.map((tec: TechProps, idx: number) => (
+                    {tech.map((tec: TechProps) => (
                         <div
-                            className="p-2"
+                            className="py-2 px-4 bg-nextJS m-1 rounded-2xl"
                             key={tec.id}
-                            data-for={`tec#${idx}`}
-                            data-tip={tec.name}
                         >
-                            {tec.icon}
-                            <Tooltip
-                                effect="solid"
-                                place="top"
-                                id={`tec#${idx}`}
-                            />
+                            <p className="text-white text-sm">{tec.name}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-10 flex items-center">
+                <div className="mt-10 flex items-center justify-self-end">
                     {live && (
-                        <div className="bg-react mr-2">
+                        <div
+                            className="bg-react mr-2"
+                            onMouseEnter={handleEnterButton}
+                            onMouseLeave={handleLeaveButton}
+                        >
                             <motion.a
                                 whileHover={{ scale: 1.14 }}
                                 whileTap={{ scale: 0.9 }}
                                 href={live}
                                 target="_blank"
                                 rel="noopener"
-                                className="block font-bold py-3 px-5 w-full h-full"
+                                className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
                             >
+                                <FiExternalLink size={17} className="mr-2" />
                                 Live site
                             </motion.a>
                         </div>
                     )}
 
-                    <div className="bg-nextJS">
+                    <div className="bg-darkLines">
                         <motion.a
                             whileHover={{ scale: 1.14 }}
                             whileTap={{ scale: 0.9 }}
                             href={repo}
                             target="_blank"
                             rel="noopener"
-                            className="block font-bold py-3 px-5 w-full h-full"
+                            className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
                         >
+                            <AiFillGithub size={17} className="mr-2" />
                             Code
                         </motion.a>
                     </div>
 
-                    {video && (
+                    {/* {video && (
                         <div className="bg-primaryRed ml-2">
                             <motion.a
                                 whileHover={{ scale: 1.14 }}
@@ -94,25 +93,28 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
                                 href={video}
                                 target="_blank"
                                 rel="noopener"
-                                className="block font-bold py-3 px-5 w-full h-full"
+                                className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
                             >
+                                <AiFillYoutube size={17} className="mr-2" />
                                 View Video
                             </motion.a>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
-            <div
-                className={`flex-2 order-1  ${
-                    isOtherSide ? "lg:order-1" : "lg:order-2"
-                }`}
+            <motion.div
+                className="flex-2 order-1 lg:order-2 cursor-pointer"
+                onMouseEnter={handleEnterCaseStudy}
+                onMouseLeave={handleLeaveCaseStudy}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.8 }}
             >
                 <img
                     src={cover}
                     alt={title}
                     className="w-full h-full object-cover"
                 />
-            </div>
+            </motion.div>
         </div>
     );
 };

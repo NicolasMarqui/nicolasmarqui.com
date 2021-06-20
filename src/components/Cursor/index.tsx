@@ -29,7 +29,13 @@ const Cursor: React.FC = ({}) => {
                 translateX: cursorXSpring,
                 translateY: cursorYSpring,
             }}
-        />
+        >
+            <img
+                src="/images/study.png"
+                alt="Case study cursor"
+                className="hidden case__children w-full h-full object-cover"
+            />
+        </motion.div>
     );
 };
 export default Cursor;

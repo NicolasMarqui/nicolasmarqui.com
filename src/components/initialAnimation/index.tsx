@@ -26,7 +26,7 @@ const InitialAnimation: React.FC = () => {
                     onAnimationComplete={handleCloseInitialAnimation}
                     key={index}
                     className={
-                        "intro-text text-4xl font-bold md:text-8xl text-white text-" +
+                        "intro-text text-4xl font-bold md:text-8xl 2xl:text-9xl text-white text-" +
                         (index + 1)
                     }
                 >

@@ -70,3 +70,18 @@ export const menuVariants = {
         scale: 1,
     },
 };
+
+export const heroVariants = {
+    hidden: {
+        opacity: 0,
+        y: 300,
+    },
+    scrollDown: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 5,
+            duration: 1,
+        },
+    },
+};
