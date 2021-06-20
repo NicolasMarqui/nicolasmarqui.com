@@ -9,7 +9,7 @@ import Cursor from "@components/Cursor";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="dark">
             <Cursor />
             <Head>
                 <title>Nicolas Marqui - Front-end Developer</title>

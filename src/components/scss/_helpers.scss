@@ -90,6 +90,21 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
+
+        &.cursor__toggle {
+            height: 48px;
+            width: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 40px;
+            border: none;
+
+            .toggle__children {
+                display: flex;
+            }
+        }
     }
 }
 
