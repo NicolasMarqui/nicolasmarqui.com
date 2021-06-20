@@ -2,14 +2,18 @@ import { TechProps, WorkProps } from "@utils/types";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { useInView } from "react-intersection-observer";
 
 interface WorkCardProps {
     work: WorkProps;
-    isOtherSide?: boolean;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
     const { type, title, description, cover, repo, live, tech, video } = work;
+
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+    });
 
     const handleEnterCaseStudy = () => {
         document.querySelector(".cursor").classList.add("cursor__CaseStudy");
@@ -28,8 +32,18 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
     };
 
     return (
-        <div className="w-full  rounded-lg flex flex-col lg:flex-row my-16 shadow dark:shadow-md overflow-hidden lg:items-center">
-            <div className="flex-1 flex flex-col align-center h-full p-4 order-2 lg:order-1">
+        <div
+            className="w-full  rounded-lg flex flex-col lg:flex-row my-16 shadow dark:shadow-md overflow-hidden lg:items-center"
+            ref={ref}
+        >
+            <motion.div
+                className="flex-1 flex flex-col align-center h-full p-4 order-2 lg:order-1"
+                initial={{ opacity: 0, x: -100 }}
+                animate={
+                    inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
+                }
+                transition={{ duration: 0.5 }}
+            >
                 <p className="font-light mt-4 lg:text-2xl">{type}</p>
                 <h3 className="text-6xl md:text-7xl 2xl:text-9xl font-bold text-reallyBlack dark:text-white">
                     {title}
@@ -101,7 +115,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
                         </div>
                     )} */}
                 </div>
-            </div>
+            </motion.div>
             <motion.div
                 className="flex-2 order-1 lg:order-2 cursor-pointer"
                 onMouseEnter={handleEnterCaseStudy}
@@ -109,7 +123,10 @@ const WorkCard: React.FC<WorkCardProps> = ({ work, isOtherSide = false }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.8 }}
             >
-                <img
+                <motion.img
+                    initial={{ y: -100 }}
+                    animate={inView ? { y: 0 } : { y: -100 }}
+                    transition={{ duration: 0.8 }}
                     src={cover}
                     alt={title}
                     className="w-full h-full object-cover"

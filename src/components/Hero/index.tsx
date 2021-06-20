@@ -49,6 +49,15 @@ const Hero: React.FC = ({}) => {
                     React Developer
                 </motion.h2>
             </Container>
+
+            <div
+                className="absolute bottom-20 cursor-pointer hover:underline"
+                onClick={() => scrollTo("#projects")}
+            >
+                <p className="font-light text-xl text-reallyBlack dark:text-white">
+                    See my work
+                </p>
+            </div>
         </div>
     );
 };
