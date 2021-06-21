@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 
 const Socials: React.FC = () => {
     const { theme } = useTheme();
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
         <div className="absolute inset-0 z-10">

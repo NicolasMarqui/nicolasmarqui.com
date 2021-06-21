@@ -6,11 +6,11 @@ import { ThemeProvider } from "next-themes";
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import Cursor from "@components/Cursor";
+import Layout from "@components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
-        <ThemeProvider attribute="class" defaultTheme="dark">
-            <Cursor />
+        <ThemeProvider attribute="class" defaultTheme="system">
             <Head>
                 <title>Nicolas Marqui - Front-end Developer</title>
                 <link rel="shortcut icon" href="/icon-512.png" />
@@ -114,10 +114,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <meta name="theme-color" content="#06092B" />
                 <meta
                     name="description"
-                    content="Take beautiful screenshots from your favorite websites"
+                    content="Hello my name is Nicolas Marqui and i’m a I’m a creative front-end developer who loves React, NextJS, React Native and NodeJS, but who also loves to learn new technologies ⚡"
                 />
             </Head>
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </ThemeProvider>
     );
 }

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { headerVariant } from "@utils/variants";
 import FullMenu from "@components/FullMenu";
 import Toggle from "@components/Toggle";
+import Link from "next/link";
 
 const Nav: React.FC = ({}) => {
     const [isOpenMobile, setIsOpenMobile] = useState(false);
@@ -41,15 +42,19 @@ const Nav: React.FC = ({}) => {
                 <Container>
                     <div className="w-full flex items-center justify-between">
                         <div className="flex-none">
-                            <motion.h1
-                                className={`text-2xl font-bold relative ${
-                                    isFixed
-                                        ? "text-black dark:text-white py-3"
-                                        : "text-black dark:text-white"
-                                }`}
-                            >
-                                NM
-                            </motion.h1>
+                            <Link href="/">
+                                <a>
+                                    <motion.h1
+                                        className={`text-2xl font-bold relative ${
+                                            isFixed
+                                                ? "text-black dark:text-white py-3"
+                                                : "text-black dark:text-white"
+                                        }`}
+                                    >
+                                        NM
+                                    </motion.h1>
+                                </a>
+                            </Link>
                         </div>
                         <div className="flex-none flex items-center">
                             <Menu

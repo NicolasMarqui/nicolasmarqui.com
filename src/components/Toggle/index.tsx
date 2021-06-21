@@ -1,15 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Toggle: React.FC = ({}) => {
     const { theme, setTheme } = useTheme();
-    const [isDarkMode, setIsDarkMode] = useState(theme === "light");
-
-    const handleToggle = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-        setIsDarkMode(!isDarkMode);
-    };
+    const [mounted, setMounted] = useState(false);
 
     const handleEnterCursorToggle = () => {
         document.querySelector(".cursor").classList.add("cursor__toggle");
@@ -18,6 +13,10 @@ const Toggle: React.FC = ({}) => {
     const handleLeaveCursorToggle = () => {
         document.querySelector(".cursor").classList.remove("cursor__toggle");
     };
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
 
     return (
         <div
@@ -28,8 +27,8 @@ const Toggle: React.FC = ({}) => {
             <DarkModeSwitch
                 moonColor="#222"
                 sunColor="#fff"
-                checked={isDarkMode}
-                onChange={handleToggle}
+                checked={theme === "light"}
+                onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
                 size={50}
             />
         </div>

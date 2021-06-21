@@ -1,12 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
-import useWindowSize from "@utils/useWindowSize";
-import Link from "next/link";
 import { menuVariants } from "@utils/variants";
 import { useRouter } from "next/router";
 import { useLazyEffect } from "@utils/useLazyEffect";
-import Socials from "@components/Socials";
 import useSmoothScroll from "react-smooth-scroll-hook";
 
 interface FullMenuProps {
@@ -82,7 +79,7 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                         variants={menuVariants}
                         animate={currOpen ? "panel1" : "closePanels"}
                         onAnimationComplete={() => setHeightDone(true)}
-                        className="flex-2 flex justify-center items-center bg-white overflow-y-auto"
+                        className="flex-2 flex justify-center items-center bg-white dark:bg-reallyBlack overflow-y-auto"
                     >
                         <ul className="flex flex-col">
                             <motion.li
@@ -94,25 +91,12 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 onClick={() => handleClick("#home")}
                             >
                                 <div className="menu__number">
-                                    <p className="text-lg">(1)</p>
+                                    <p className="text-lg text-black dark:text-white">
+                                        (1)
+                                    </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black font-bold custom__hover">
+                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
                                     Home
-                                </a>
-                            </motion.li>
-                            <motion.li
-                                className="my-5 relative"
-                                variants={menuVariants}
-                                animate="showLinks"
-                                initial={{ y: -900 }}
-                                whileHover={{ scale: 1.17 }}
-                                onClick={() => handleClick("#about")}
-                            >
-                                <div className="menu__number">
-                                    <p className="text-lg">(2)</p>
-                                </div>
-                                <a className="text-3xl md:text-8xl text-black font-bold custom__hover">
-                                    About
                                 </a>
                             </motion.li>
 
@@ -122,13 +106,33 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 animate="showLinks"
                                 initial={{ y: -900 }}
                                 whileHover={{ scale: 1.17 }}
-                                onClick={() => handleClick("#work")}
+                                onClick={() => handleClick("#projects")}
                             >
                                 <div className="menu__number">
-                                    <p className="text-lg">(3)</p>
+                                    <p className="text-lg text-black dark:text-white">
+                                        (2)
+                                    </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black font-bold custom__hover">
-                                    My Work
+                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
+                                    Projects
+                                </a>
+                            </motion.li>
+
+                            <motion.li
+                                className="my-5 relative"
+                                variants={menuVariants}
+                                animate="showLinks"
+                                initial={{ y: -900 }}
+                                whileHover={{ scale: 1.17 }}
+                                onClick={() => handleClick("#about")}
+                            >
+                                <div className="menu__number">
+                                    <p className="text-lg text-black dark:text-white">
+                                        (3)
+                                    </p>
+                                </div>
+                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
+                                    About
                                 </a>
                             </motion.li>
 
@@ -141,9 +145,11 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 onClick={() => handleClick("#contact")}
                             >
                                 <div className="menu__number">
-                                    <p className="text-lg">(3)</p>
+                                    <p className="text-lg text-black dark:text-white">
+                                        (4)
+                                    </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black font-bold custom__hover">
+                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
                                     Contact
                                 </a>
                             </motion.li>

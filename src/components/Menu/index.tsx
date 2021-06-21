@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import { motion } from "framer-motion";
 import useSmoothScroll from "react-smooth-scroll-hook";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 interface MenuProps {
     isOpenMobile: boolean;
@@ -39,6 +40,17 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
                 <ul className="list-none m-0 p-0 flex-row items-center text-right hidden sm:flex nav__menu">
                     <motion.li
                         className="mx-4 cursor-pointer"
+                        whileHover={{ scale: 1.16 }}
+                        whileTap={{ scale: 0.8 }}
+                    >
+                        <Link href="/about">
+                            <a className="text-reallyBlack dark:text-white">
+                                About
+                            </a>
+                        </Link>
+                    </motion.li>
+                    <motion.li
+                        className="mx-4 cursor-pointer"
                         onMouseEnter={handleHoverLinkOn}
                         onMouseLeave={handleHoverLinkOut}
                         whileHover={{ scale: 1.16 }}
@@ -51,20 +63,6 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
                     </motion.li>
                     <motion.li
                         className="mx-4 cursor-pointer"
-                        onMouseEnter={handleHoverLinkOn}
-                        onMouseLeave={handleHoverLinkOut}
-                        whileHover={{ scale: 1.16 }}
-                        whileTap={{ scale: 0.8 }}
-                        onClick={() => scrollTo("#about")}
-                    >
-                        <p className="text-reallyBlack dark:text-white">
-                            About
-                        </p>
-                    </motion.li>
-                    <motion.li
-                        className="mx-4 cursor-pointer"
-                        onMouseEnter={handleHoverLinkOn}
-                        onMouseLeave={handleHoverLinkOut}
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
                         onClick={() => scrollTo("#contact")}

@@ -9,13 +9,12 @@ import ScrollToTop from "@components/ScrollTop";
 
 const Home: React.FC = () => {
     return (
-        <div className="relative overflow-x-hidden bg-lightPrimary dark:bg-darkPrimary">
+        <div>
             <ScrollToTop />
-            <InitialAnimation />
-            <Nav />
+            {/* <InitialAnimation /> */}
             <Hero />
-            <Work />
             <About />
+            <Work />
             <Contact />
             <Footer />
         </div>
