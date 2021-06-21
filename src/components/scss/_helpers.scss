@@ -105,6 +105,25 @@
                 display: flex;
             }
         }
+
+        &.cursor__toTop {
+            height: 300px;
+            width: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -250px;
+            left: -5px;
+            border: none;
+            transform: rotate(180deg);
+
+            .top__children {
+                display: flex;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+            }
+        }
     }
 }
 
@@ -146,8 +165,8 @@
     &::before {
         content: "";
         position: absolute;
-        width: 40rem;
-        height: 40rem;
+        width: 10rem;
+        height: 10rem;
         border-radius: 100rem;
         background-color: transparent;
         border: 1px solid #eee;
@@ -169,8 +188,8 @@
     }
 
     &.circle__1 {
-        left: calc(50% + 20rem);
-        top: -4rem;
+        right: 6rem;
+        top: -10rem;
         animation-delay: -1333ms;
     }
 
@@ -178,22 +197,16 @@
         left: calc(8rem / 2);
         top: 120%;
         animation-delay: -666ms;
-
-        &::before {
-            content: "";
-            width: 27rem;
-            height: 27rem;
-        }
     }
 
     &.circle__3 {
         top: 140%;
-        left: calc(100% - 12rem);
+        left: calc(100% - 8rem);
 
         &::before {
             content: "";
-            width: 15rem;
-            height: 15rem;
+            width: 12rem;
+            height: 12rem;
         }
     }
 
@@ -211,6 +224,31 @@
         &::before {
             width: calc(4rem * 2.5);
             height: calc(4rem * 2.5);
+        }
+    }
+
+    @media (min-width: 992px) {
+        &::before {
+            width: 40rem;
+            height: 40rem;
+        }
+
+        &:hover {
+            &::before {
+                width: calc(4rem * 2.5);
+                height: calc(4rem * 2.5);
+            }
+        }
+
+        &.circle__1 {
+            left: calc(50% + 20rem);
+            right: auto;
+            top: -4rem;
+            animation-delay: -1333ms;
+        }
+
+        &.circle__3 {
+            left: calc(100% - 12rem);
         }
     }
 }

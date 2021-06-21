@@ -15,12 +15,14 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
         threshold: 0.5,
     });
 
-    const handleEnterCaseStudy = () => {
-        document.querySelector(".cursor").classList.add("cursor__CaseStudy");
-    };
-    const handleLeaveCaseStudy = () => {
-        document.querySelector(".cursor").classList.remove("cursor__CaseStudy");
-    };
+    // SOON
+
+    // const handleEnterCaseStudy = () => {
+    //     document.querySelector(".cursor").classList.add("cursor__CaseStudy");
+    // };
+    // const handleLeaveCaseStudy = () => {
+    //     document.querySelector(".cursor").classList.remove("cursor__CaseStudy");
+    // };
 
     const handleEnterButton = () => {
         document.querySelector(".cursor").classList.add("cursor__cardButton");
@@ -98,30 +100,12 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                             Code
                         </motion.a>
                     </div>
-
-                    {/* {video && (
-                        <div className="bg-primaryRed ml-2">
-                            <motion.a
-                                whileHover={{ scale: 1.14 }}
-                                whileTap={{ scale: 0.9 }}
-                                href={video}
-                                target="_blank"
-                                rel="noopener"
-                                className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
-                            >
-                                <AiFillYoutube size={17} className="mr-2" />
-                                View Video
-                            </motion.a>
-                        </div>
-                    )} */}
                 </div>
             </motion.div>
             <motion.div
-                className="flex-2 order-1 lg:order-2 cursor-pointer"
-                onMouseEnter={handleEnterCaseStudy}
-                onMouseLeave={handleLeaveCaseStudy}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.8 }}
+                className="flex-2 order-1 lg:order-2"
+                // whileHover={{ scale: 1.05 }}
+                // whileTap={{ scale: 0.8 }}
             >
                 <motion.img
                     initial={{ y: -100 }}

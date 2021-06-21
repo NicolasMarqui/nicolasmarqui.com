@@ -20,7 +20,7 @@ const Hero: React.FC = ({}) => {
             id="home"
         >
             <Lines />
-            <Container classes="flex flex-col justify-center relative">
+            <Container classes="flex flex-col justify-center relative items-center md:items-start">
                 <Socials />
                 <motion.h3
                     variants={heroVariants}
@@ -35,7 +35,7 @@ const Hero: React.FC = ({}) => {
                     initial="hidden"
                     animate="scrollDown"
                     transition={{ delay: 1 }}
-                    className="text-5xl md:text-8xl 2xl:text-9xl  md:-mt-2 z-30"
+                    className="text-5xl md:text-8xl 2xl:text-9xl md:-mt-2 z-30"
                 >
                     Front-end
                 </motion.h2>
@@ -44,9 +44,10 @@ const Hero: React.FC = ({}) => {
                     initial="hidden"
                     animate="scrollDown"
                     transition={{ delay: 4 }}
-                    className="text-5xl md:text-8xl 2xl:text-9xl  md:-mt-1 md:ml-20 z-30"
+                    className="text-5xl md:text-8xl 2xl:text-9xl md:-mt-1 md:ml-20 z-30 text-center md:text-left"
                 >
-                    React Developer
+                    <span className="hidden sm:inline-block">React</span>{" "}
+                    Developer
                 </motion.h2>
             </Container>
 

@@ -4,12 +4,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { headerVariant } from "@utils/variants";
 import FullMenu from "@components/FullMenu";
-import { useTheme } from "next-themes";
 import Toggle from "@components/Toggle";
 
 const Nav: React.FC = ({}) => {
-    const { theme, setTheme } = useTheme();
-
     const [isOpenMobile, setIsOpenMobile] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
 
