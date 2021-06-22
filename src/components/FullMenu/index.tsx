@@ -5,6 +5,7 @@ import { menuVariants } from "@utils/variants";
 import { useRouter } from "next/router";
 import { useLazyEffect } from "@utils/useLazyEffect";
 import useSmoothScroll from "react-smooth-scroll-hook";
+import Link from "next/link";
 
 interface FullMenuProps {
     handleClose: () => any;
@@ -26,7 +27,11 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
         document.querySelector("body").classList.remove("overflow-hidden");
 
     const handleClick = (element: string) => {
-        scrollTo(element);
+        if (router.pathname !== "/") {
+            router.push(`/${element}`);
+        } else {
+            scrollTo(`${element}`);
+        }
         handleClose();
     };
 
@@ -88,16 +93,17 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 animate="showLinks"
                                 initial={{ y: -900 }}
                                 whileHover={{ scale: 1.17 }}
-                                onClick={() => handleClick("#home")}
                             >
                                 <div className="menu__number">
                                     <p className="text-lg text-black dark:text-white">
                                         (1)
                                     </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
-                                    Home
-                                </a>
+                                <Link href="/">
+                                    <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
+                                        Home
+                                    </a>
+                                </Link>
                             </motion.li>
 
                             <motion.li
@@ -124,16 +130,17 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 animate="showLinks"
                                 initial={{ y: -900 }}
                                 whileHover={{ scale: 1.17 }}
-                                onClick={() => handleClick("#about")}
                             >
                                 <div className="menu__number">
                                     <p className="text-lg text-black dark:text-white">
                                         (3)
                                     </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
-                                    About
-                                </a>
+                                <Link href="/about">
+                                    <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
+                                        About
+                                    </a>
+                                </Link>
                             </motion.li>
 
                             <motion.li

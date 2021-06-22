@@ -43,6 +43,10 @@ const Cursor: React.FC = ({}) => {
             <h3 className="hidden top__children w-full text-center font-bold items-center text-xl justify-center dark:text-white text-reallyBlack">
                 To the top we go !!!
             </h3>
+
+            <h3 className="hidden email__children w-full text-center font-bold items-center text-2xl justify-center text-white ">
+                Send me <br /> an email
+            </h3>
         </motion.div>
     );
 };

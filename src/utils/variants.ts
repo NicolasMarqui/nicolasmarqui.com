@@ -80,7 +80,7 @@ export const heroVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            delay: 5,
+            delay: 2,
             duration: 1,
         },
     },

@@ -16,7 +16,9 @@ const About: React.FC = ({}) => {
                     whileHover={{ scale: 1.09 }}
                 >
                     <Link href="/about">
-                        <a className="font-bold text-white">About me</a>
+                        <a className="font-bold text-white flex items-center justify-center w-full h-full ">
+                            About me
+                        </a>
                     </Link>
                 </motion.div>
             </Container>

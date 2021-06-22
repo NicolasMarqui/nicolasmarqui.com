@@ -20,9 +20,9 @@ const InitialAnimation: React.FC = () => {
         >
             {[...Array(9)].map((_, index) => (
                 <motion.h3
-                    initial={{ scale: 1 }}
-                    animate={index === 4 ? { scale: 4 } : {}}
-                    transition={{ delay: 4, duration: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 1 }}
                     onAnimationComplete={handleCloseInitialAnimation}
                     key={index}
                     className={

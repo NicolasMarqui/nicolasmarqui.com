@@ -19,6 +19,13 @@ const Nav: React.FC = ({}) => {
         }
     };
 
+    const handleEnterLogo = () => {
+        document.querySelector(".cursor").classList.add("cursor__logo");
+    };
+    const handleLeaveLogo = () => {
+        document.querySelector(".cursor").classList.remove("cursor__logo");
+    };
+
     useEffect(() => {
         window.addEventListener("scroll", fixedNav);
 
@@ -41,7 +48,11 @@ const Nav: React.FC = ({}) => {
             >
                 <Container>
                     <div className="w-full flex items-center justify-between">
-                        <div className="flex-none">
+                        <div
+                            className="flex-none"
+                            onMouseLeave={handleLeaveLogo}
+                            onMouseEnter={handleEnterLogo}
+                        >
                             <Link href="/">
                                 <a>
                                     <motion.h1

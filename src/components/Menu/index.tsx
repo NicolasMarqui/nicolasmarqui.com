@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hamburger from "hamburger-react";
 import { motion } from "framer-motion";
 import useSmoothScroll from "react-smooth-scroll-hook";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface MenuProps {
     isOpenMobile: boolean;
@@ -12,6 +13,9 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
     const { theme } = useTheme();
+    const router = useRouter();
+
+    const [mounted, setMounted] = useState(false);
 
     const ref = useRef(process.browser ? document.documentElement : undefined);
     const { scrollTo } = useSmoothScroll({
@@ -19,6 +23,14 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
         speed: 50,
         direction: "y",
     });
+
+    const handleNavScroll = (tag: string) => {
+        if (router.pathname !== "/") {
+            router.push(`/#${tag}`);
+        } else {
+            scrollTo(`#${tag}`);
+        }
+    };
 
     const handleHoverLinkOn = () => {
         const cursor = document.querySelector(".cursor");
@@ -34,6 +46,10 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
         }
     };
 
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) return null;
+
     return (
         <>
             <nav className="w-full">
@@ -44,7 +60,7 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
                         whileTap={{ scale: 0.8 }}
                     >
                         <Link href="/about">
-                            <a className="text-reallyBlack dark:text-white">
+                            <a className="text-reallyBlack dark:text-white block">
                                 About
                             </a>
                         </Link>
@@ -55,7 +71,7 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
                         onMouseLeave={handleHoverLinkOut}
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
-                        onClick={() => scrollTo("#projects")}
+                        onClick={() => handleNavScroll("projects")}
                     >
                         <p className="text-reallyBlack dark:text-white">
                             Projects

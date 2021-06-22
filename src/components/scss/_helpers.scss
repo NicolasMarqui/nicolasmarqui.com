@@ -60,6 +60,32 @@
             background-repeat: no-repeat;
         }
 
+        &.cursor__logo {
+            border-radius: 0;
+            width: 40px;
+            height: 4px;
+            top: 40px;
+            left: 0;
+            background-color: #f94144;
+            border: none;
+        }
+
+        &.cursor__email {
+            background-color: #f94144;
+            border: none;
+            width: 200px;
+            height: 200px;
+            top: -70px;
+            left: -70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .email__children {
+                display: flex;
+            }
+        }
+
         &.cursor__CaseStudy {
             // background-color: #fff;
             border: none;
@@ -301,48 +327,47 @@
 }
 
 .text-1 {
-    animation: blink 0.6s linear 0.6s, blink 0.6s linear 2.1s;
+    animation: blink 0.6s linear 0.6s infinite;
     opacity: 0;
 }
 
 .text-2 {
-    animation: blink 0.6s linear 0.5s, blink 0.6s linear 2.2s;
+    animation: blink 0.6s linear 0.5s infinite;
     opacity: 0;
 }
 
 .text-3 {
-    animation: blink 0.6s linear 0.4s, blink 0.6s linear 2.3s;
+    animation: blink 0.6s linear 0.4s infinite;
     opacity: 0;
 }
 
 .text-4 {
-    animation: blink 0.6s linear 0.3s, blink 0.6s linear 2.4s;
+    animation: blink 0.6s linear 0.3s infinite;
     opacity: 0;
 }
 
 .text-5 {
-    animation: blink 0.6s linear 0.4s, blink 0.6s linear 2.5s,
-        slide-out 1s linear 3.5s;
+    animation: blink 0.6s linear 0.4s infinite;
     opacity: 0;
 }
 
 .text-6 {
-    animation: blink 0.6s linear 0.5s, blink 0.6s linear 2.4s;
+    animation: blink 0.6s linear 0.5s infinite;
     opacity: 0;
 }
 
 .text-7 {
-    animation: blink 0.6s linear 0.6s, blink 0.6s linear 2.3s;
+    animation: blink 0.6s linear 0.6s infinite;
     opacity: 0;
 }
 
 .text-8 {
-    animation: blink 0.6s linear 0.7s, blink 0.6s linear 2.2s;
+    animation: blink 0.6s linear 0.7s infinite;
     opacity: 0;
 }
 
 .text-9 {
-    animation: blink 0.6s linear 0.6s, blink 0.6s linear 2.1s;
+    animation: blink 0.6s linear 0.6s infinite;
     opacity: 0;
 }
 
