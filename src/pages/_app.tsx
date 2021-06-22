@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                     crossOrigin=""
                 />
                 <link rel="icon" type="image/png" href="/favicon.ico" />
-                {/* <link
+                <link
                     rel="apple-touch-icon"
                     sizes="57x57"
                     href="/icons/apple-icon-57x57.png"
@@ -107,7 +107,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <meta
                     name="msapplication-TileImage"
                     content="/icons/ms-icon-144x144.png"
-                /> */}
+                />
                 <meta name="theme-color" content="#4361EE" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <meta name="theme-color" content="#06092B" />
