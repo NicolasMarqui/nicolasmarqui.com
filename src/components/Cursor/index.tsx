@@ -24,12 +24,30 @@ const Cursor: React.FC = ({}) => {
 
     return (
         <motion.div
-            className="cursor"
+            className="hidden md:flex cursor"
             style={{
                 translateX: cursorXSpring,
                 translateY: cursorYSpring,
             }}
-        />
+        >
+            <img
+                src="/images/study.png"
+                alt="Case study cursor"
+                className="hidden case__children w-full h-full object-cover"
+            />
+
+            <h3 className="hidden toggle__children w-full text-center font-bold items-center justify-center dark:text-white text-reallyBlack">
+                Change theme color
+            </h3>
+
+            <h3 className="hidden top__children w-full text-center font-bold items-center text-xl justify-center dark:text-white text-reallyBlack">
+                To the top we go !!!
+            </h3>
+
+            <h3 className="hidden email__children w-full text-center font-bold items-center text-2xl justify-center text-white ">
+                Send me <br /> an email
+            </h3>
+        </motion.div>
     );
 };
 export default Cursor;

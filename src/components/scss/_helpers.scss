@@ -40,37 +40,131 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: #f94144;
-        mix-blend-mode: difference;
+        background-color: transparent;
+        // mix-blend-mode: difference;
         z-index: 999;
         pointer-events: none;
+        border: 1px solid #f94144;
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border-radius: 50%;
-            background-color: #f94144;
+        &.cursor__link {
+            border-radius: 0;
+            width: 150px;
+            height: 100px;
+            background-image: url("/images/projects.gif");
+            top: 50px;
+            left: -20px;
+            border: none;
+            filter: blur(1px);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
-        &.cursor__live {
-            background-color: #6461ea;
-            mix-blend-mode: color;
+        &.cursor__logo {
+            border-radius: 0;
+            width: 40px;
+            height: 4px;
+            top: 40px;
+            left: 0;
+            background-color: #f94144;
+            border: none;
+        }
 
-            &::before {
-                content: none;
+        &.cursor__email {
+            background-color: #f94144;
+            border: none;
+            width: 200px;
+            height: 200px;
+            top: -70px;
+            left: -70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .email__children {
+                display: flex;
+            }
+        }
+
+        &.cursor__CaseStudy {
+            // background-color: #fff;
+            border: none;
+            width: 175px;
+            height: 175px;
+            top: -70px;
+            left: -70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .case__children {
+                display: flex;
+                animation: rotateImg 3s linear infinite;
+            }
+        }
+
+        &.cursor__cardButton {
+            border-radius: 0;
+            width: 150px;
+            height: 100px;
+            background-image: url("/images/projects.gif");
+            top: 50px;
+            left: -20px;
+            border: none;
+            filter: blur(1px);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &.cursor__toggle {
+            height: 300px;
+            width: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 5px;
+            left: -5px;
+            border: none;
+            transform: rotate(180deg);
+
+            .toggle__children {
+                display: flex;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+            }
+        }
+
+        &.cursor__toTop {
+            height: 300px;
+            width: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -250px;
+            left: -5px;
+            border: none;
+            transform: rotate(180deg);
+
+            .top__children {
+                display: flex;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
             }
         }
     }
 }
 
-.bg-home {
-    background-image: url("../../../public/images/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+@keyframes rotateImg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .about_title {
@@ -83,4 +177,254 @@
 
 .emailFooter {
     word-wrap: break-word;
+}
+
+.circle {
+    animation: move-up-down 6s ease-in-out infinite alternate;
+
+    @keyframes move-up-down {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-35px);
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 100rem;
+        background-color: transparent;
+        border: 1px solid #eee;
+        pointer-events: none;
+        transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &.circle__dark {
+        &::before {
+            // background-color: #282828 !important;
+            border: 1px solid #494949;
+        }
+    }
+
+    &.circle__light {
+        &::before {
+            background-color: #fff !important;
+        }
+    }
+
+    &.circle__1 {
+        right: 6rem;
+        top: -10rem;
+        animation-delay: -1333ms;
+    }
+
+    &.circle__2 {
+        left: calc(8rem / 2);
+        top: 120%;
+        animation-delay: -666ms;
+    }
+
+    &.circle__3 {
+        top: 140%;
+        left: calc(100% - 8rem);
+
+        &::before {
+            content: "";
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+
+    .circle__child {
+        transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 14;
+    }
+
+    &:hover {
+        .circle__child {
+            height: calc(4rem * 1.5) !important;
+            width: calc(4rem * 1.5) !important;
+        }
+
+        &::before {
+            width: calc(4rem * 2.5);
+            height: calc(4rem * 2.5);
+        }
+    }
+
+    @media (min-width: 992px) {
+        &::before {
+            width: 40rem;
+            height: 40rem;
+        }
+
+        &:hover {
+            &::before {
+                width: calc(4rem * 2.5);
+                height: calc(4rem * 2.5);
+            }
+        }
+
+        &.circle__1 {
+            left: calc(50% + 20rem);
+            right: auto;
+            top: -4rem;
+            animation-delay: -1333ms;
+        }
+
+        &.circle__3 {
+            left: calc(100% - 12rem);
+        }
+    }
+}
+
+.intro-container {
+    animation: slide-out-container 2.7s cubic-bezier(0.97, 0.01, 0.36, 0.99)
+        3.4s;
+    animation-fill-mode: forwards;
+}
+
+.intro-counter {
+    font-family: eurostile-extended, sans-serif;
+    font-weight: 900;
+    align-self: flex-end;
+    padding-bottom: 5vh;
+    mix-blend-mode: difference;
+    color: #f0f5f3;
+}
+
+.intro-text-wrapper {
+    color: #f0f5f3;
+    position: absolute;
+}
+
+.text-2,
+.text-4,
+.text-6,
+.text-8 {
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1.5px #f0f5f3;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.text-1 {
+    animation: blink 0.6s linear 0.6s infinite;
+    opacity: 0;
+}
+
+.text-2 {
+    animation: blink 0.6s linear 0.5s infinite;
+    opacity: 0;
+}
+
+.text-3 {
+    animation: blink 0.6s linear 0.4s infinite;
+    opacity: 0;
+}
+
+.text-4 {
+    animation: blink 0.6s linear 0.3s infinite;
+    opacity: 0;
+}
+
+.text-5 {
+    animation: blink 0.6s linear 0.4s infinite;
+    opacity: 0;
+}
+
+.text-6 {
+    animation: blink 0.6s linear 0.5s infinite;
+    opacity: 0;
+}
+
+.text-7 {
+    animation: blink 0.6s linear 0.6s infinite;
+    opacity: 0;
+}
+
+.text-8 {
+    animation: blink 0.6s linear 0.7s infinite;
+    opacity: 0;
+}
+
+.text-9 {
+    animation: blink 0.6s linear 0.6s infinite;
+    opacity: 0;
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 0;
+    }
+
+    19% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+
+    39% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+
+    59% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+
+    79% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-container {
+    0% {
+        height: 100vh;
+        opacity: 1;
+    }
+
+    40% {
+        height: 100vh;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        opacity: 0;
+    }
 }

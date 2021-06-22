@@ -1,6 +1,6 @@
 module.exports = {
     purge: ["./pages/**/*.tsx", "./src/**/*.tsx"],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: "class", // or 'media' or 'class'
     theme: {
         extend: {
             colors: {
@@ -16,9 +16,19 @@ module.exports = {
                 overlay: "rgba(0, 0, 0, 0.65)",
                 black: "#2F2F2F",
                 reallyBlack: "#222",
+                // lightPrimary: "#FBFBFB",
+                lightPrimary: "#FFF",
+                lightSecondary: "rgba(240, 240, 240, 0.42)",
+                lightLines: "#DCDCDC",
+                darkPrimary: "#282828",
+                darkLines: "#494949",
+                circleBlue: "#E5F1F8",
+                circleRed: "rgba(254, 236, 234, 1)",
+                circleDark: "rgba(173, 173, 173, 1)",
             },
             borderColor: (theme) => ({
-                lightBlack: "#2D2D2D",
+                lightCircles: "#DCDCDC",
+                darkCircles: "#494949",
             }),
             fontSize: {
                 nav: "1.05rem",
@@ -28,6 +38,12 @@ module.exports = {
                 2: "2 2 0%",
                 1.5: "1.5 1.5 0%",
             },
+            width: {
+                1: "1px",
+            },
+            height: {
+                1: "1px",
+            },
             fontFamily: {
                 zilla: ["Zilla Slab", "serif"],
             },
@@ -36,9 +52,10 @@ module.exports = {
             extend: {
                 display: ["group-hover", "hover"],
                 borderRadius: ["group-hover", "hover"],
+                padding: ["hover"],
             },
         },
-        fontFamily: ["Raleway", "Zilla Slab"],
+        fontFamily: ["TTHoves", "Serif"],
         container: {
             center: true,
             padding: {
