@@ -27,7 +27,7 @@ const Toggle: React.FC = ({}) => {
             <DarkModeSwitch
                 moonColor="#222"
                 sunColor="#fff"
-                checked={theme === "light"}
+                checked={theme && theme === "light"}
                 onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
                 size={50}
             />

@@ -5,12 +5,11 @@ import { ThemeProvider } from "next-themes";
 
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
-import Cursor from "@components/Cursor";
 import Layout from "@components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
-        <ThemeProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="light">
             <Head>
                 <title>Nicolas Marqui - Front-end Developer</title>
                 <link rel="shortcut icon" href="/icon-512.png" />
