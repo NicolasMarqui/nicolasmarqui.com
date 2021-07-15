@@ -24,7 +24,8 @@ export const projects = [
         id: 1,
         title: "Nivelo",
         type: "Full-stack",
-        description: "🎓 Sistema web para nivelamento acadêmico",
+        description:
+            "Tutoring application that helps college students to improve their knowledge or difficulties with extra classes. 🎓",
         cover: "/projects/nivelo.jpg",
         tech: [
             {
@@ -90,7 +91,8 @@ export const projects = [
         id: 2,
         title: "Flate",
         type: "Full-stack",
-        description: "🔑 Real Estate website built with Next and Prisma",
+        description:
+            "Full stack real estate website built with Next, tailwind and Prisma. 🔑",
         cover: "/projects/flate.jpg",
         tech: [
             {
@@ -123,6 +125,18 @@ export const projects = [
                 name: "Vercel",
                 icon: <IoLogoVercel size={27} color="#fff" />,
             },
+            {
+                id: 7,
+                name: "Prisma",
+            },
+            {
+                id: 8,
+                name: "Postgresql",
+            },
+            {
+                id: 9,
+                name: "Leaflet",
+            },
         ],
         repo: "https://github.com/NicolasMarqui/Flate",
         live: "https://flate.vercel.app/",
@@ -131,8 +145,9 @@ export const projects = [
         id: 3,
         title: "Marca Ponto",
         type: "Front-end",
-        description: "⏰ Controle de ponto online",
-        cover: "/projects/marca_ponto.png",
+        description:
+            "Marca Ponto is a web-based time clock solution that allows you to track employee time and attendance online using a standard web browser. ⏰",
+        cover: "/projects/marca_ponto.jpg",
         tech: [
             {
                 id: 1,
@@ -288,7 +303,8 @@ export const projects = [
         id: 8,
         title: "Marca Ponto App",
         type: "Front-end",
-        description: "⏰ App para controle de ponto online",
+        description:
+            "Marca Ponto is a android/IOS time clock solution that allows you to track employee time and attendance online using a standard mobile. ⏰",
         cover: "/projects/marca_pontoApp.jpg",
         tech: [
             {
