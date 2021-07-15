@@ -51,7 +51,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                     {title}
                 </h3>
 
-                <p className="font-light my-9 md:text-2xl 2xl:text-4xl">
+                <p className="font-light my-9 md:text-2xl 2xl:text-4xl 2xl:leading-10">
                     {description}
                 </p>
 

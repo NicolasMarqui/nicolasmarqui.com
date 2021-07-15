@@ -23,7 +23,7 @@ const Hero: React.FC = ({}) => {
                     variants={heroVariants}
                     initial="hidden"
                     animate="scrollDown"
-                    className="text-2xl md:text-3xl z-30"
+                    className="text-2xl sm:text-3xl z-30"
                 >
                     Nicolas Marqui
                 </motion.h3>
@@ -31,7 +31,7 @@ const Hero: React.FC = ({}) => {
                     variants={heroVariants}
                     initial="hidden"
                     animate="scrollDown"
-                    className="text-5xl md:text-8xl 2xl:text-9xl md:-mt-2 z-30"
+                    className="text-5xl sm:text-8xl 2xl:text-9xl md:-mt-2 z-30"
                 >
                     Front-end
                 </motion.h2>
