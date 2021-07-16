@@ -119,9 +119,11 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                         (2)
                                     </p>
                                 </div>
-                                <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
-                                    Projects
-                                </a>
+                                <Link href="/about">
+                                    <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
+                                        Projects
+                                    </a>
+                                </Link>
                             </motion.li>
 
                             <motion.li

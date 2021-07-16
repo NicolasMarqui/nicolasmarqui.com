@@ -25,7 +25,7 @@ export const projects = [
         title: "Nivelo",
         type: "Full-stack",
         description:
-            "Tutoring application that helps college students to improve their knowledge or difficulties with extra classes. 🎓",
+            "Tutoring application that helps college students to improve their knowledge with extra classes. 🎓",
         cover: "/projects/nivelo.jpg",
         tech: [
             {

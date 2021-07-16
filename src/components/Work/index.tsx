@@ -11,10 +11,10 @@ const Work: React.FC = ({}) => {
         >
             <Container classes="relative z-20">
                 <h2 className="text-6xl md:text-7xl  font-bold md:-mt-2 text-center">
-                    Projects
+                    Selected Projects
                 </h2>
             </Container>
-            <div className="mt-10 flex flex-wrap items-center justify-around w-10/12 mx-auto z-20 relative overflow-hidden">
+            <div className="mt-20 flex flex-wrap items-center justify-around w-10/12 mx-auto z-20 relative overflow-hidden">
                 {projects.map((proj: WorkProps) => (
                     <WorkCard key={proj.id} work={proj} />
                 ))}
