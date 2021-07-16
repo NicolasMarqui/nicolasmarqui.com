@@ -1,7 +1,7 @@
 import Container from "@components/Container";
 import WorkCard from "@components/WorkCard";
-import { projects } from "@utils/data";
-import { ProjectsType, WorkProps } from "@utils/types";
+import { ProjectsType } from "@utils/types";
+import Link from "next/link";
 
 type WorkType = {
     projects: ProjectsType[] | null;
@@ -22,6 +22,14 @@ const Work = ({ projects }: WorkType) => {
                 {projects.map((proj: ProjectsType) => (
                     <WorkCard key={proj.id} work={proj} />
                 ))}
+            </div>
+
+            <div className="mt-10 text-center">
+                <Link href="/projects">
+                    <a className="hover:underline text-2xl">
+                        See all my projects
+                    </a>
+                </Link>
             </div>
         </div>
     );
