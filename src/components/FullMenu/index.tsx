@@ -112,14 +112,13 @@ const FullMenu: React.FC<FullMenuProps> = ({ handleClose }) => {
                                 animate="showLinks"
                                 initial={{ y: -900 }}
                                 whileHover={{ scale: 1.17 }}
-                                onClick={() => handleClick("#projects")}
                             >
                                 <div className="menu__number">
                                     <p className="text-lg text-black dark:text-white">
                                         (2)
                                     </p>
                                 </div>
-                                <Link href="/about">
+                                <Link href="/projects">
                                     <a className="text-3xl md:text-8xl text-black dark:text-white font-bold custom__hover">
                                         Projects
                                     </a>
