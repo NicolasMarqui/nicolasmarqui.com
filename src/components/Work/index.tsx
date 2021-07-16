@@ -1,9 +1,13 @@
 import Container from "@components/Container";
 import WorkCard from "@components/WorkCard";
 import { projects } from "@utils/data";
-import { WorkProps } from "@utils/types";
+import { ProjectsType, WorkProps } from "@utils/types";
 
-const Work: React.FC = ({}) => {
+type WorkType = {
+    projects: ProjectsType[] | null;
+};
+
+const Work = ({ projects }: WorkType) => {
     return (
         <div
             className="py-20 bg-lightSecondary dark:bg-reallyBlack relative overflow-hidden"
@@ -15,7 +19,7 @@ const Work: React.FC = ({}) => {
                 </h2>
             </Container>
             <div className="mt-20 flex flex-wrap items-center justify-around w-10/12 mx-auto z-20 relative overflow-hidden">
-                {projects.map((proj: WorkProps) => (
+                {projects.map((proj: ProjectsType) => (
                     <WorkCard key={proj.id} work={proj} />
                 ))}
             </div>

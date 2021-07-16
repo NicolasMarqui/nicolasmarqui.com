@@ -1,15 +1,23 @@
-import { TechProps, WorkProps } from "@utils/types";
+import { TechProps, ProjectsType } from "@utils/types";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
 import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
 
 interface WorkCardProps {
-    work: WorkProps;
+    work: ProjectsType;
 }
 
 const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
-    const { type, title, description, cover, repo, live, tech, video } = work;
+    const {
+        title,
+        description,
+        projectType,
+        cover: { height, width, url },
+        techs,
+        liveSite,
+        repoLink,
+    } = work;
 
     const { ref, inView } = useInView({
         threshold: 0.5,
@@ -46,7 +54,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                 }
                 transition={{ duration: 0.5 }}
             >
-                <p className="font-light mt-4 lg:text-2xl">{type}</p>
+                <p className="font-light mt-4 lg:text-2xl">{projectType}</p>
                 <h3 className="text-6xl md:text-7xl 2xl:text-9xl font-bold text-reallyBlack dark:text-white">
                     {title}
                 </h3>
@@ -56,18 +64,18 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                 </p>
 
                 <div className="flex  flex-wrap">
-                    {tech.map((tec: TechProps) => (
+                    {techs.map((tec: string, idx: number) => (
                         <div
                             className="py-2 px-4 bg-nextJS m-1 rounded-2xl"
-                            key={tec.id}
+                            key={idx}
                         >
-                            <p className="text-white text-sm">{tec.name}</p>
+                            <p className="text-white text-sm">{tec}</p>
                         </div>
                     ))}
                 </div>
 
                 <div className="mt-10 flex items-center justify-self-end">
-                    {live && (
+                    {liveSite && (
                         <div
                             className="bg-react mr-2"
                             onMouseEnter={handleEnterButton}
@@ -76,7 +84,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                             <motion.a
                                 whileHover={{ scale: 1.14 }}
                                 whileTap={{ scale: 0.9 }}
-                                href={live}
+                                href={liveSite}
                                 target="_blank"
                                 rel="noopener"
                                 className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
@@ -91,7 +99,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                         <motion.a
                             whileHover={{ scale: 1.14 }}
                             whileTap={{ scale: 0.9 }}
-                            href={repo}
+                            href={repoLink}
                             target="_blank"
                             rel="noopener"
                             className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
@@ -102,16 +110,12 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                     </div>
                 </div>
             </motion.div>
-            <motion.div
-                className="flex-2 order-1 lg:order-2"
-                // whileHover={{ scale: 1.05 }}
-                // whileTap={{ scale: 0.8 }}
-            >
+            <motion.div className="flex-2 order-1 lg:order-2">
                 <motion.img
                     initial={{ y: -100 }}
                     animate={inView ? { y: 0 } : { y: -100 }}
                     transition={{ duration: 0.8 }}
-                    src={cover}
+                    src={url}
                     alt={title}
                     className="w-full h-full object-cover"
                 />
