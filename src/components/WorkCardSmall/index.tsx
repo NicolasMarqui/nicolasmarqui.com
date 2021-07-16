@@ -60,7 +60,7 @@ const WorkCardSmall: React.FC<WorkCardSmallProps> = ({ work }) => {
                     <h3 className="text-3xl font-bold text-reallyBlack dark:text-white">
                         {title}
                     </h3>
-                    <p className="font-light my-8">{description}</p>
+                    <p className="font-light mt-2 mb-8">{description}</p>
                 </div>
 
                 <div className="flex flex-wrap">
