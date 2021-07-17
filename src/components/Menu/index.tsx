@@ -71,11 +71,12 @@ const Menu: React.FC<MenuProps> = ({ isOpenMobile, handleMobile }) => {
                         onMouseLeave={handleHoverLinkOut}
                         whileHover={{ scale: 1.16 }}
                         whileTap={{ scale: 0.8 }}
-                        onClick={() => handleNavScroll("projects")}
                     >
-                        <p className="text-reallyBlack dark:text-white">
-                            Projects
-                        </p>
+                        <Link href="/projects">
+                            <a className="text-reallyBlack dark:text-white">
+                                Projects
+                            </a>
+                        </Link>
                     </motion.li>
                     <motion.li
                         className="mx-4 cursor-pointer"
