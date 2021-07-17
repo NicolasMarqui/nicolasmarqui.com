@@ -24,7 +24,7 @@ export const GET_SELECTED_WORK = gql`
 
 export const GET_ALL_WORK = gql`
     query GetAllWork {
-        projects {
+        projects(orderBy: order_ASC) {
             id
             title
             projectType

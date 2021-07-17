@@ -1,8 +1,9 @@
-import { TechProps, ProjectsType } from "@utils/types";
+import { ProjectsType } from "@utils/types";
 import { motion } from "framer-motion";
 import { FiExternalLink } from "react-icons/fi";
-import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { useInView } from "react-intersection-observer";
+import { BsEyeSlashFill } from "react-icons/bs";
 
 interface WorkCardSmallProps {
     work: ProjectsType;
@@ -95,19 +96,35 @@ const WorkCardSmall: React.FC<WorkCardSmallProps> = ({ work }) => {
                         </div>
                     )}
 
-                    <div className="bg-darkLines">
-                        <motion.a
-                            whileHover={{ scale: 1.14 }}
-                            whileTap={{ scale: 0.9 }}
-                            href={repoLink}
-                            target="_blank"
-                            rel="noopener"
-                            className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
-                        >
-                            <AiFillGithub size={17} className="mr-2" />
-                            Code
-                        </motion.a>
-                    </div>
+                    {repoLink ? (
+                        <div className="bg-darkLines">
+                            <motion.a
+                                whileHover={{ scale: 1.14 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={repoLink}
+                                target="_blank"
+                                rel="noopener"
+                                className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
+                            >
+                                <AiFillGithub size={17} className="mr-2" />
+                                Code
+                            </motion.a>
+                        </div>
+                    ) : (
+                        <div className="bg-darkLines">
+                            <motion.a
+                                whileHover={{ scale: 1.14 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={repoLink}
+                                target="_blank"
+                                rel="noopener"
+                                className="font-bold py-3 px-5 w-full h-full text-white flex items-center"
+                            >
+                                <BsEyeSlashFill size={17} className="mr-2" />
+                                Private code
+                            </motion.a>
+                        </div>
+                    )}
                 </div>
             </div>
         </motion.div>
