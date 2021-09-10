@@ -15,23 +15,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 <link rel="shortcut icon" href="/icon-512.png" />
                 <link rel="apple-touch-icon" href="/icon-512.png" />
                 <link rel="manifest" href="/manifest.json" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
-                    rel="preload"
-                    href="/fonts/TTHoves/TTHoves-Regular.woff"
-                    as="font"
-                    crossOrigin=""
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/TTHoves/TTHoves-Light.woff"
-                    as="font"
-                    crossOrigin=""
-                />
-                <link
-                    rel="preload"
-                    href="/fonts/TTHoves/TTHoves-Bold.woff"
-                    as="font"
-                    crossOrigin=""
+                    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&display=swap"
+                    rel="stylesheet"
                 />
                 <link rel="icon" type="image/png" href="/favicon.ico" />
                 <link
