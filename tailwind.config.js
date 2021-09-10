@@ -55,7 +55,7 @@ module.exports = {
                 padding: ["hover"],
             },
         },
-        fontFamily: ["TTHoves", "Serif"],
+        fontFamily: ["Libre Franklin", "Serif"],
         container: {
             center: true,
             padding: {
