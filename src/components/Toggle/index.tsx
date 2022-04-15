@@ -3,35 +3,23 @@ import { useTheme } from "next-themes";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 
 const Toggle: React.FC = ({}) => {
-    const { theme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-    const handleEnterCursorToggle = () => {
-        document.querySelector(".cursor").classList.add("cursor__toggle");
-    };
+  useEffect(() => setMounted(true), []);
 
-    const handleLeaveCursorToggle = () => {
-        document.querySelector(".cursor").classList.remove("cursor__toggle");
-    };
+  if (!mounted) return null;
 
-    useEffect(() => setMounted(true), []);
-
-    if (!mounted) return null;
-
-    return (
-        <div
-            onMouseEnter={handleEnterCursorToggle}
-            onMouseLeave={handleLeaveCursorToggle}
-            className="p-3 shadow-sm bg-gray-100 dark:bg-reallyBlack rounded-lg flex items-center justify-center w-12 h-12"
-        >
-            <DarkModeSwitch
-                moonColor="#222"
-                sunColor="#fff"
-                checked={theme && theme === "light"}
-                onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-                size={50}
-            />
-        </div>
-    );
+  return (
+    <div className="p-1 shadow-sm bg-gray-100 dark:bg-reallyBlack rounded-lg flex items-center justify-center w-6 h-6">
+      <DarkModeSwitch
+        moonColor="#222"
+        sunColor="#fff"
+        checked={theme && theme === "light"}
+        onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        size={30}
+      />
+    </div>
+  );
 };
 export default Toggle;
