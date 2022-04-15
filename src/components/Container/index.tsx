@@ -1,9 +1,9 @@
 interface ContainerProps {
-    classes?: string;
+  classes?: string;
 }
 
 const Container: React.FC<ContainerProps> = ({ children, classes }) => {
-    return <div className={`container z-10 ${classes}`}>{children}</div>;
+  return <div className={`container z-10 ${classes}`}>{children}</div>;
 };
 
 export default Container;
