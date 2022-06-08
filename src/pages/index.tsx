@@ -1,9 +1,10 @@
+import { GetStaticProps } from "next";
+import { client, GET_SELECTED_WORK } from "src/lib/graphcms";
+import { ProjectsType } from "@utils/types";
+
 import Hero from "@components/Hero";
 import About from "@components/About";
 import Work from "@components/Work";
-import { GetStaticProps } from "next";
-import { client, GET_ALL_WORK, GET_SELECTED_WORK } from "src/lib/graphcms";
-import { ProjectsType } from "@utils/types";
 import Skills from "@components/Skills";
 import AllWork from "@components/AllWork";
 
