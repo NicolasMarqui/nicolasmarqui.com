@@ -1,8 +1,6 @@
 import { ScrollContext } from "@utils/scroll-observer";
 import { useContext, useRef } from "react";
 import s from "@styles/about.module.scss";
-import { BsArrowRightShort } from "react-icons/bs";
-import { skills } from "@utils/data";
 import { WorkLink } from "@components/Tile";
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
@@ -43,24 +41,19 @@ const About: React.FC = ({}) => {
             className={s.skillText}
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
-            I&apos;m a{" "}
-            <WorkLink href="https://www.upwork.com/freelancers/~01de27feb27785f69d">
-              freelancer
-            </WorkLink>{" "}
-            front-end developer from Italy 🇮🇹
+            I&apos;m a front-end developer based in Lisbon 🇵🇹
           </div>
           <span
-            className={`${s.skillText} inline-block after:content-["_"]`}
+            className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            Who has a passion for web and mobile development.
+            I have 4+ years of experience working with front-end technologies.
           </span>
           <span
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
-            I have over 3 years of experience working with front-end
-            technologies.
+            I love new challenges and I&apos;m keen on learning new things! ⚡️
           </span>
         </div>
       </div>

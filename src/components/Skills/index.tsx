@@ -1,53 +1,57 @@
-import { skills } from "@utils/data";
-import Link from "next/link";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { SiUpwork } from "react-icons/si";
+import SkillList from "@components/SkillList";
+import SkillSocials from "@components/SkillSocials";
+import { backEndSkills, frontEndSkills } from "@utils/data";
+import useWindowSize from "@utils/useWindowSize";
+import Image from "next/image";
 
 const Skills: React.FC = () => {
+  const { width } = useWindowSize();
+  const isMobile = width < 992;
+
   return (
     <section
-      className={`flex flex-col bg-lightPrimary dark:bg-reallyBlack py-32 text-3xl md:text-4xl`}
+      className={`flex flex-col bg-lightPrimary dark:bg-reallyBlack py-20 md:py-28`}
     >
-      <div className="container mx-auto px-11">
-        <div className="mx-auto max-w-5xl text-4xl leading-tight tracking-tight">
-          <strong>Some of my skills are: </strong> <br />
-          {skills.map((skill, idx) => (
-            <p
-              key={skill.id}
-              className="inline-block text-2xl mx-1 tracking-wide"
-            >
-              {skill.name}
-              {""}
-              {idx !== skills.length - 1 ? "," : null}
-            </p>
-          ))}
-          <div className="mt-20 flex items-center">
-            <Link href="https://www.linkedin.com/in/nicolas-marqui/">
-              <a target="_blank" rel="noopener">
-                <FaLinkedin
-                  color="#0e76a8"
-                  className="transform cursor-pointer hover:scale-110"
-                />
-              </a>
-            </Link>
+      <div className="container px-11">
+        <h3 className="text-3xl lg:text-4xl tracking-tight font-bold text-center md:text-left !leading-[3.5rem]">
+          More about me
+        </h3>
 
-            <Link href="https://www.instagram.com/nick_marqui/">
-              <a target="_blank" rel="noopener">
-                <FaInstagram
-                  color="#E1306C"
-                  className="transform cursor-pointer hover:scale-110 ml-2"
-                />
-              </a>
-            </Link>
+        <div className="flex md:items-start flex-col md:flex-row gap-10">
+          <div className="flex-grow order-2 md:order-1 md:mt-4">
+            <div>
+              <p className="text-lg mt-4 leading-8">
+                I've spent the past year traveling around Europe while creating
+                beautiful UI's for companies around the globe including London
+                🇬🇧, New York 🇺🇸, and Brazil 🇧🇷. And during this trip, I fell in
+                love with Lisbon 🇵🇹, where I currently live.
+              </p>
+              <p className="text-lg mt-4 leading-8">
+                I enjoy creating beautiful and reliable applications for
+                internet and phones. My goal is to always build scalable
+                products and performant experiences.
+              </p>
+            </div>
 
-            <Link href="https://www.upwork.com/freelancers/~01de27feb27785f69d">
-              <a target="_blank" rel="noopener">
-                <SiUpwork
-                  color="#6fda44"
-                  className="transform cursor-pointer hover:scale-110 ml-2"
-                />
-              </a>
-            </Link>
+            <h4 className="my-10 underline underline-offset-8 text-xl">
+              👨🏽‍💻 Here are a few technologies I've been working with recently:
+            </h4>
+
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+              <SkillList data={frontEndSkills} title="Front-end" />
+              <SkillList data={backEndSkills} title="Back-end / Others" />
+            </div>
+          </div>
+
+          <div className="md:sticky top-14 order-1 md:order-2 mt-8 md:mt-0 flex items-center justify-center flex-col">
+            <Image
+              src="/images/myself.jpeg"
+              height={isMobile ? 300 : 600}
+              width={isMobile ? 300 : 600}
+              objectFit="cover"
+              className="rounded-full"
+            />
+            <SkillSocials />
           </div>
         </div>
       </div>
