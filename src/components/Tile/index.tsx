@@ -92,15 +92,15 @@ export const Tile: React.FC<Props> = ({ page, renderContent }) => {
 };
 
 export const WorkContainer: React.FC = ({ children }) => (
-  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
+  <div className="grid grid-cols-1 md:grid-cols-2 w-full min-h-screen">
     {children}
   </div>
 );
 
 export const WorkBackground: React.FC = () => (
-  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen top-0 sticky">
-    <div className="bg-white dark:bg-black h-[40vh] lg:h-auto"></div>
-    <div className="h-[60vh] lg:min-h-screen"></div>
+  <div className="grid grid-cols-1 md:grid-cols-2 w-full min-h-screen top-0 sticky">
+    <div className="bg-white dark:bg-black h-[65vh] md:h-auto"></div>
+    <div className="h-[35vh] md:min-h-screen"></div>
   </div>
 );
 
@@ -113,12 +113,14 @@ export const WorkLeft: React.FC<{ progress: number }> = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-center text-3xl h-[40vh] lg:h-auto"
+      className="flex flex-col items-center justify-center text-3xl h-[65vh] md:h-auto"
       style={{
         transform: `translateY(${translateY}px)`,
       }}
     >
-      <div className="leading-10 ">{children}</div>
+      <div className="leading-10 flex flex-col items-start gap-10 md:w-2/3 p-10 md:p-0">
+        {children}
+      </div>
     </div>
   );
 };
@@ -136,7 +138,7 @@ export const WorkRight: React.FC<{ progress: number }> = ({
         transform: `translateY(${translateY}px)`,
       }}
     >
-      <div className="w-full h-full">{children}</div>
+      <div className="w-full h-full bg-white dark:bg-black">{children}</div>
     </div>
   );
 };
@@ -150,7 +152,7 @@ export const WorkLink: React.FC<LinkProps> = ({ href, children }) => (
     <a
       target="_blank"
       rel="norefer "
-      className="underline underline-offset-8 decoration-1 "
+      className="underline underline-offset-8 decoration-1 hover:scale-105 transform transition-all"
     >
       {children}
     </a>
