@@ -24,16 +24,6 @@ const SkillSocials = () => {
           />
         </a>
       </Link>
-
-      <Link href="https://www.upwork.com/freelancers/~01de27feb27785f69d">
-        <a target="_blank" rel="noopener">
-          <SiUpwork
-            size={30}
-            color="#6fda44"
-            className="transform cursor-pointer hover:scale-110 ml-2"
-          />
-        </a>
-      </Link>
     </div>
   );
 };
