@@ -4,8 +4,7 @@
 
 ### Features and technologies
 
--   Dark/Light Mode
--   Headless CMS (GraphCMS)
--   Next.js
--   Tailwind.css
--   Framer motion
+- Dark/Light Mode
+- Next.js
+- Tailwind.css
+- Framer motion
