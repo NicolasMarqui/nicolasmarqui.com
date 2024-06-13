@@ -58,6 +58,10 @@ export const backEndSkills = [
     id: 6,
     name: "GraphQL",
   },
+  {
+    id: 7,
+    name: "Golang",
+  },
 ];
 
 export const projectTypes = [
