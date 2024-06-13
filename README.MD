@@ -1,10 +1,13 @@
-# My personal portfolio
+![Portfolio](https://raw.githubusercontent.com/NicolasMarqui/nicolasmarqui.com/master/public/images/portfolio.jpeg)
 
-![](https://media.graphcms.com/DYhN8nB9RN21BfAFzPM9)
+## 🚀 nicolasmarqui.com
 
-### Features and technologies
+Hey there, welcome to my portfolio!
 
-- Dark/Light Mode
-- Next.js
-- Tailwind.css
-- Framer motion
+I'm a software engineer living in the lively city of Lisbon 🇵🇹. With over 7 years of experience in front-end tech, I love taking on new challenges and learning new things every day.
+
+### Get in Contact with me
+
+[Instagram](https://www.instagram.com/nick_marqui/)
+
+[LinkedIn](https://www.linkedin.com/in/nicolas-marqui/)
