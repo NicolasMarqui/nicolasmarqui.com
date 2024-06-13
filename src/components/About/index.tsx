@@ -41,19 +41,20 @@ const About: React.FC = ({}) => {
             className={s.skillText}
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
-            I&apos;m a front-end developer based in Lisbon 🇵🇹
+            I&apos;m a software engineer living in Lisbon 🇵🇹
           </div>
           <span
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            I have 4+ years of experience working with front-end technologies.
+            I have 6+ years of experience working with front-end technologies.
           </span>
           <span
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
-            I love new challenges and I&apos;m keen on learning new things! ⚡️
+            I love taking on new challenges and learning new things every day.
+            ⚡️
           </span>
         </div>
       </div>
