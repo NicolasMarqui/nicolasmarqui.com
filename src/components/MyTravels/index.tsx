@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const MyTravels = () => {
   return (
-    <section className="container -mt-9 my-8 py-8 flex flex-col items-center justify-center relative bg-white rounded-lg max-w-[80%] mx-auto">
-      <div className="relative flex h-full w-full max-w-[70rem] items-center shadow-lg justify-center overflow-hidden rounded-lg bg-background sm:px-32 lg:px-40 pb-40 pt-8 md:shadow-xl">
+    <section className="-mt-9 my-8 py-8 flex flex-col items-center justify-center relative bg-white rounded-lg w-[90%] sm:max-w-[80%] mx-auto">
+      <div className="relative flex h-full w-full max-w-[70rem] items-center shadow-lg justify-center overflow-hidden rounded-lg bg-background sm:px-32 lg:px-40 pb-32 sm:pb-40 pt-8 md:shadow-xl">
         <div className="flex flex-col items-center gap-3">
           <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-500/80 bg-clip-text text-center text-4xl md:text-8xl font-semibold leading-none text-transparent ">
             My Travels
