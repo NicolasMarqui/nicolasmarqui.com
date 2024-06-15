@@ -7,6 +7,7 @@ import About from "@components/About";
 import Work from "@components/Work";
 import Skills from "@components/Skills";
 import AllWork from "@components/AllWork";
+import MyTravels from "@components/MyTravels";
 
 const Home = ({ projects }: { projects: ProjectsType[] | null }) => {
   return (
@@ -14,6 +15,7 @@ const Home = ({ projects }: { projects: ProjectsType[] | null }) => {
       <Hero />
       <About />
       <Skills />
+      <MyTravels />
       <Work projects={projects} />
       <AllWork />
     </>
