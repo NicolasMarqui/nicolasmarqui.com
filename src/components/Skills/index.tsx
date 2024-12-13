@@ -39,7 +39,7 @@ const Skills: React.FC = () => {
               </p>
 
               <p className="text-lg mt-4 leading-8 ">
-                So far, I’ve been to 27 countries and can’t wait to explore
+                So far, I’ve been to 35 countries and can’t wait to explore
                 more. I enjoy making beautiful and reliable apps, and I hope to
                 keep doing so for a long time.
               </p>
